@@ -16,6 +16,11 @@ set(PROJECT_SOURCES
         main.cpp
         main_window.cpp
         main_window.hpp
+        datc_comm_interface.cpp
+        datc_comm_interface.hpp
+        datc_ctrl.cpp
+        datc_ctrl.hpp
+        modbus_comm.hpp
         gripper_window.ui
 )
 
@@ -42,7 +47,10 @@ else()
     endif()
 endif()
 
-target_link_libraries(datc_user_interface PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(datc_user_interface
+    PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
+    modbus
+)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
