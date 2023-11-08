@@ -12,42 +12,42 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
-set(PROJECT_SOURCES
-        main.cpp
-        main_window.cpp
-        main_window.hpp
-        datc_comm_interface.cpp
-        datc_comm_interface.hpp
-        datc_ctrl.cpp
-        datc_ctrl.hpp
-        modbus_comm.hpp
-        gripper_window.ui
-)
+if(WIN32)
+    file(GLOB ${PROJECT_NAME}_SRCS
+        *.cpp
+        *.hpp
+        *.ui
+        lib/*.h
+    )
+elseif(UNIX)
+    file(GLOB ${PROJECT_NAME}_SRCS
+        *.cpp
+        *.hpp
+        *.ui
+    )
+else()
+    message(FATAL_ERROR "Unsupported operating system")
+endif()
+
+link_directories(${CMAKE_SOURCE_DIR}/lib)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(datc_user_interface
+    qt_add_executable(${PROJECT_NAME}
         MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
+        ${${PROJECT_NAME}_SRCS}
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET datc_user_interface APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
 # For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
-    if(ANDROID)
-        add_library(datc_user_interface SHARED
-            ${PROJECT_SOURCES}
-        )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-    else()
-        add_executable(datc_user_interface
-            ${PROJECT_SOURCES}
-        )
-    endif()
+    add_executable(${PROJECT_NAME}
+        ${${PROJECT_NAME}_SRCS}
+    )
 endif()
 
-target_link_libraries(datc_user_interface
+
+target_link_libraries(${PROJECT_NAME}
     PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
     modbus
 )
@@ -58,7 +58,7 @@ target_link_libraries(datc_user_interface
 if(${QT_VERSION} VERSION_LESS 6.1.0)
   set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.datc_user_interface)
 endif()
-set_target_properties(datc_user_interface PROPERTIES
+set_target_properties(${PROJECT_NAME} PROPERTIES
     ${BUNDLE_ID_OPTION}
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
@@ -67,12 +67,12 @@ set_target_properties(datc_user_interface PROPERTIES
 )
 
 include(GNUInstallDirs)
-install(TARGETS datc_user_interface
+install(TARGETS ${PROJECT_NAME}
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(datc_user_interface)
+    qt_finalize_executable(${PROJECT_NAME})
 endif()

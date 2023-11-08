@@ -16,7 +16,7 @@ DatcCtrl::DatcCtrl() {
 DatcCtrl::~DatcCtrl() {
 }
 
-bool DatcCtrl::modbusInit(char *port_name, uint slave_address) {
+bool DatcCtrl::modbusInit(char *port_name, uint16_t slave_address) {
     return mbc_.modbusInit(port_name, slave_address);
 }
 
@@ -25,7 +25,7 @@ bool DatcCtrl::modbusRelease() {
     return true;
 }
 
-bool DatcCtrl::modbusSlaveChange(uint slave_addr) {
+bool DatcCtrl::modbusSlaveChange(uint16_t slave_addr) {
     return mbc_.slaveChange(slave_addr);
 }
 
@@ -126,7 +126,7 @@ bool DatcCtrl::setMotorSpeed (uint16_t speed_ratio) {
 }
 
 bool DatcCtrl::readDatcData() {
-    static map<uint, pair<bool*, string>> status_info;
+    static map<uint16_t, pair<bool*, string>> status_info;
 
     if (status_info.size() == 0) {
         // Bit, Value, Status 순서

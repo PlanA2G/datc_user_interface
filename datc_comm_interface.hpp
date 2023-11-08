@@ -28,7 +28,7 @@ Q_SIGNALS:
     void rosShutdown();
 
 public:
-    bool init(char *port_name, uint slave_address);
+    bool init(char *port_name, uint16_t slave_address);
 
 private:
     void run();

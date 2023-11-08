@@ -11,7 +11,13 @@
 #ifndef MODBUS_COMM_HPP
 #define MODBUS_COMM_HPP
 
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__)
+#include "lib/modbus-rtu.h"
+#include <unistd.h>
+#else
 #include <modbus/modbus-rtu.h>
+#endif
+
 #include <mutex>
 #include <iostream>
 #include <vector>
@@ -31,7 +37,7 @@ public:
         modbusRelease();
     }
 
-    bool modbusInit(char *port_name, uint slave_address) {
+    bool modbusInit(char *port_name, uint16_t slave_address) {
         std::unique_lock<std::mutex> lg(mutex_comm_);
 
         mb_ = modbus_new_rtu(port_name, BAUDRATE, PARITY_MODE, DATA_BIT, STOP_BIT);
@@ -72,7 +78,7 @@ public:
         COUT("Modbus released");
     }
 
-    bool slaveChange(uint slave_address) {
+    bool slaveChange(uint16_t slave_address) {
         std::unique_lock<std::mutex> lg(mutex_comm_);
 
         if (modbus_set_slave(mb_, slave_address) == -1) {

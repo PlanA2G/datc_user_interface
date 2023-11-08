@@ -72,9 +72,9 @@ public:
     DatcCtrl();
     ~DatcCtrl();
 
-    bool modbusInit(char *port_name, uint slave_address);
+    bool modbusInit(char *port_name, uint16_t slave_address);
     bool modbusRelease();
-    bool modbusSlaveChange(uint slave_addr);
+    bool modbusSlaveChange(uint16_t slave_addr);
 
     bool motorEnable();
     bool motorStop();

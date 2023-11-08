@@ -10,7 +10,7 @@
  */
 #include "datc_comm_interface.hpp"
 
-const uint kFreq = 50;
+const uint16_t kFreq = 50;
 
 DatcCommInterface::DatcCommInterface(int argc, char **argv) {
 
@@ -21,7 +21,7 @@ DatcCommInterface::~DatcCommInterface() {
     flag_stop_ = true;
 }
 
-bool DatcCommInterface::init(char *port_name, uint slave_address) {
+bool DatcCommInterface::init(char *port_name, uint16_t slave_address) {
     if (!modbusInit(port_name, slave_address)) {
         return false;
     }

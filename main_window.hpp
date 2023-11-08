@@ -11,11 +11,9 @@
 #ifndef MAIN_WINDOW_HPP
 #define MAIN_WINDOW_HPP
 
-//#include <QtGui>
 #include <QTimer>
 #include <QLineEdit>
 #include <QList>
-//#include <QMessageBox>
 #include <QMainWindow>
 
 #include <iostream>

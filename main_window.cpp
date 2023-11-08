@@ -34,16 +34,20 @@ MainWindow::MainWindow(int argc, char **argv, bool &success, QWidget *parent): Q
     QObject::connect(ui.pushButton_set_torque_ratio, SIGNAL(clicked()), this, SLOT(pushButton_setTorqueCallback()));
 
     if (argc >= 0) {
-//        string address_str = argv[2];
-        string port = "/dev/ttyUSB0";
-//        uint slave_address = stoi(address_str);
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__)
+        char* port = "COM4";
+#else
+        char* port = "/dev/ttyUSB0";
+#endif
+//        string address_str = argv[2];        
+//        uint16_t slave_address = stoi(address_str);
 
         COUT("--------------------------------------");
         COUT("[INFO] Port: ");
 //        cout << "[INFO] Slave address #" << slave_address << endl;
         COUT("--------------------------------------");
 
-        if (datc_interface_->init("/dev/ttyUSB0", 1)) {
+        if (datc_interface_->init(port, 1)) {
             timer_ = new QTimer(this);
             connect(timer_, SIGNAL(timeout()), this, SLOT(timerCallback()));
             timer_->start(100); // msec
