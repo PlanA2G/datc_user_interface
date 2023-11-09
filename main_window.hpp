@@ -43,20 +43,28 @@ public Q_SLOTS:
     void timerCallback();
 
     // Enable & disable
-    void pushButton_cmdEnableCallback();
-    void pushButton_cmdDisableCallback();
+    void datcEnable();
+    void datcDisable();
 
-    // Control
-    void pushButton_grpPosCtrlCallback();
+    // Datc control
+    void datcFingerPosCtrl();
 
-    void pushButton_grpInitCallback();
-    void pushButton_grpOpenCallback();
-    void pushButton_grpCloseCallback();
-    void pushButton_vacuumGrpOnCallback();
-    void pushButton_vacuumGrpOffCallback();
+    void datcInit();
+    void datcOpen();
+    void datcClose();
+    void datcVacuumGrpOn();
+    void datcVacuumGrpOff();
 
-    void pushButton_setTorqueCallback();
-    void pushButton_setSpeedCallback();
+    void datcSetTorque();
+    void datcSetSpeed();
+
+#ifndef RCLCPP__RCLCPP_HPP_
+    // TCP comm. related functions
+    void openTcpComm();
+    void closeTcpComm();
+#endif
+
+
 
 private:
 #ifdef RCLCPP__RCLCPP_HPP_

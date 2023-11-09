@@ -14,8 +14,13 @@
 #include "datc_ctrl.hpp"
 #include <thread>
 #include <QThread>
+#include <boost/asio.hpp>
+#include <jsoncpp/json/json.h>
+#include "socket/tcp_manager.hpp"
 
 using namespace std;
+using namespace boost::asio;
+using namespace boost::asio::ip;
 
 class DatcCommInterface : public QThread, public DatcCtrl {
     Q_OBJECT
@@ -29,10 +34,24 @@ Q_SIGNALS:
 
 public:
     bool init(char *port_name, uint16_t slave_address);
+    void initTcp(const string addr, uint16_t socket_port);
+    void releaseTcp();
 
 private:
     void run();
+    void sendStatus();
+    void recvCommand();
+
     bool flag_stop_ = false;
+
+    // TCP socket related variables
+    TcpServer *tcp_server_;
+    std::thread tcp_thread_;
+
+    bool flag_tcp_stop_       = false;
+    bool is_socket_connected_ = false;
+
+    mutex mutex_tcp_;
 
 };
 

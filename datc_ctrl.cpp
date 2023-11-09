@@ -148,6 +148,7 @@ bool DatcCtrl::readDatcData() {
     mbc_.recvData(reg_addr, reg_num, reg);
 
     uint16_t status    = reg[0];
+    status_.states     = status;
     status_.motor_pos  = reg[1];
     status_.motor_cur  = reg[2];
     status_.motor_vel  = reg[3];

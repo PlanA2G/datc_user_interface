@@ -65,6 +65,7 @@ struct DatcStatus {
     int16_t motor_cur = 0;
     uint16_t finger_pos = 0;
     uint16_t voltage    = 0;
+    uint16_t states     = 0;
 };
 
 class DatcCtrl {

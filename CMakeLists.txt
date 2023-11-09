@@ -11,12 +11,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(Boost REQUIRED COMPONENTS system thread)
 
 if(WIN32)
     file(GLOB ${PROJECT_NAME}_SRCS
         *.cpp
         *.hpp
         *.ui
+        socket/*.cpp
+        socket/*.hpp
         lib/*.h
     )
 elseif(UNIX)
@@ -24,6 +27,8 @@ elseif(UNIX)
         *.cpp
         *.hpp
         *.ui
+        socket/*.cpp
+        socket/*.hpp
     )
 else()
     message(FATAL_ERROR "Unsupported operating system")
@@ -49,6 +54,9 @@ endif()
 
 target_link_libraries(${PROJECT_NAME}
     PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
+    ${Boost_SYSTEM_LIBRARY}
+    ${Boost_THREAD_LIBRARY}
+    jsoncpp
     modbus
 )
 

@@ -21,17 +21,17 @@ MainWindow::MainWindow(int argc, char **argv, bool &success, QWidget *parent): Q
     datc_interface_ = new DatcCommInterface(argc, argv);
 
     // Button mapping
-    QObject::connect(ui.pushButton_cmd_enable  , SIGNAL(clicked()), this, SLOT(pushButton_cmdEnableCallback()));
-    QObject::connect(ui.pushButton_cmd_disable , SIGNAL(clicked()), this, SLOT(pushButton_cmdDisableCallback()));
-    QObject::connect(ui.pushButton_set_position, SIGNAL(clicked()), this, SLOT(pushButton_grpPosCtrlCallback()));
+    QObject::connect(ui.pushButton_cmd_enable  , SIGNAL(clicked()), this, SLOT(datcEnable()));
+    QObject::connect(ui.pushButton_cmd_disable , SIGNAL(clicked()), this, SLOT(datcDisable()));
+    QObject::connect(ui.pushButton_set_position, SIGNAL(clicked()), this, SLOT(datcFingerPosCtrl()));
 
-    QObject::connect(ui.pushButton_cmd_initialize    , SIGNAL(clicked()), this, SLOT(pushButton_grpInitCallback()));
-    QObject::connect(ui.pushButton_cmd_grp_open      , SIGNAL(clicked()), this, SLOT(pushButton_grpOpenCallback()));
-    QObject::connect(ui.pushButton_cmd_grp_close     , SIGNAL(clicked()), this, SLOT(pushButton_grpCloseCallback()));
-    QObject::connect(ui.pushButton_cmd_grp_vacuum_on , SIGNAL(clicked()), this, SLOT(pushButton_vacuumGrpOnCallback()));
-    QObject::connect(ui.pushButton_cmd_grp_vacuum_off, SIGNAL(clicked()), this, SLOT(pushButton_vacuumGrpOffCallback()));
+    QObject::connect(ui.pushButton_cmd_initialize    , SIGNAL(clicked()), this, SLOT(datcInit()));
+    QObject::connect(ui.pushButton_cmd_grp_open      , SIGNAL(clicked()), this, SLOT(datcOpen()));
+    QObject::connect(ui.pushButton_cmd_grp_close     , SIGNAL(clicked()), this, SLOT(datcClose()));
+    QObject::connect(ui.pushButton_cmd_grp_vacuum_on , SIGNAL(clicked()), this, SLOT(datcVacuumGrpOn()));
+    QObject::connect(ui.pushButton_cmd_grp_vacuum_off, SIGNAL(clicked()), this, SLOT(datcVacuumGrpOff()));
 
-    QObject::connect(ui.pushButton_set_torque_ratio, SIGNAL(clicked()), this, SLOT(pushButton_setTorqueCallback()));
+    QObject::connect(ui.pushButton_set_torque_ratio, SIGNAL(clicked()), this, SLOT(datcSetTorque()));
 
     if (argc >= 0) {
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__)
@@ -55,6 +55,10 @@ MainWindow::MainWindow(int argc, char **argv, bool &success, QWidget *parent): Q
         } else {
             COUT("[ERROR] Port name or slave address invlaid !");
         }
+
+#ifndef RCLCPP__RCLCPP_HPP_
+        openTcpComm();
+#endif
     } else {
         COUT("--------------------------------------------");
         COUT("[ERROR] Port name & Slave address required !");
@@ -81,44 +85,58 @@ void MainWindow::timerCallback() {
     ui.lineEdit_monitor_mode    -> setText(QString::fromStdString(datc_status.status_str));
 }
 
-void MainWindow::pushButton_cmdEnableCallback() {
+void MainWindow::datcEnable() {
     datc_interface_->motorEnable();
 }
 
-void MainWindow::pushButton_cmdDisableCallback() {
+void MainWindow::datcDisable() {
     datc_interface_->motorDisable();
 }
 
-void MainWindow::pushButton_grpPosCtrlCallback() {
+void MainWindow::datcFingerPosCtrl() {
     datc_interface_->setFingerPos(ui.doubleSpinBox_grpPos_ctrl_range_1->value() * 100);
 }
 
-void MainWindow::pushButton_grpInitCallback() {
+void MainWindow::datcInit() {
     datc_interface_->grpInitialize();
 }
 
-void MainWindow::pushButton_grpOpenCallback() {
+void MainWindow::datcOpen() {
     datc_interface_->grpOpen();
 }
 
-void MainWindow::pushButton_grpCloseCallback() {
+void MainWindow::datcClose() {
     datc_interface_->grpClose();
 }
 
-void MainWindow::pushButton_vacuumGrpOnCallback() {
+void MainWindow::datcVacuumGrpOn() {
     datc_interface_->vacuumGrpOn();
 }
 
-void MainWindow::pushButton_vacuumGrpOffCallback() {
+void MainWindow::datcVacuumGrpOff() {
     datc_interface_->vacuumGrpOff();
 }
 
-void MainWindow::pushButton_setTorqueCallback() {
+void MainWindow::datcSetTorque() {
     datc_interface_->setMotorTorque(ui.spinBox_motor_torque_ratio->value());
 }
 
-void MainWindow::pushButton_setSpeedCallback() {
+void MainWindow::datcSetSpeed() {
 
 }
 
-}   // end of namespace
+#ifndef RCLCPP__RCLCPP_HPP_
+// TCP comm. related functions
+void MainWindow::openTcpComm() {
+    string addr          = "192.168.5.5";
+    uint16_t socket_port = 12345;
+
+    datc_interface_->initTcp(addr, socket_port);
+}
+
+void MainWindow::closeTcpComm() {
+    datc_interface_->releaseTcp();
+}
+#endif
+
+} // end of namespace
