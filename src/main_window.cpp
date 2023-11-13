@@ -42,10 +42,10 @@ MainWindow::MainWindow(int argc, char **argv, bool &success, QWidget *parent): Q
 //        string address_str = argv[2];        
 //        uint16_t slave_address = stoi(address_str);
 
-        COUT("--------------------------------------");
+        COUT("--------------------------------------------");
         COUT("[INFO] Port: ");
 //        cout << "[INFO] Slave address #" << slave_address << endl;
-        COUT("--------------------------------------");
+        COUT("--------------------------------------------");
 
         if (datc_interface_->init(port, 1)) {
             timer_ = new QTimer(this);
