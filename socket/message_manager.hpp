@@ -131,15 +131,15 @@ public:
         }
 
         // original
-        // itr->second.push(data);
+         itr->second.push(data);
 
         // modified
-        if (itr->second.empty()) {
-            itr->second.push(data);
-        } else {
-            itr->second.clear();
-            itr->second.push(data);
-        }
+//        if (itr->second.empty()) {
+//            itr->second.push(data);
+//        } else {
+//            itr->second.clear();
+//            itr->second.push(data);
+//        }
 
         return true;
     }

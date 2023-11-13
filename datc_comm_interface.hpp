@@ -15,7 +15,6 @@
 #include <thread>
 #include <QThread>
 #include <boost/asio.hpp>
-#include <jsoncpp/json/json.h>
 #include "socket/tcp_manager.hpp"
 
 using namespace std;

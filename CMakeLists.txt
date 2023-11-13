@@ -9,9 +9,17 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+if(WIN32)
+    #set(Boost_USE_MULTITHREAD ON)
+    #set(Boost_NAMESPACE "boost-1_74_0")
+    include_directories("C:/boost_1_74_0")
+elseif(UNIX)
+#    find_package(Boost REQUIRED COMPONENTS system thread)
+    find_package(Boost REQUIRED)
+endif()
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
-find_package(Boost REQUIRED COMPONENTS system thread)
 
 if(WIN32)
     file(GLOB ${PROJECT_NAME}_SRCS
@@ -51,14 +59,23 @@ else()
     )
 endif()
 
-
-target_link_libraries(${PROJECT_NAME}
-    PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
-    ${Boost_SYSTEM_LIBRARY}
-    ${Boost_THREAD_LIBRARY}
-    jsoncpp
-    modbus
-)
+if(WIN32)
+    target_link_libraries(${PROJECT_NAME}
+        PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
+        jsoncpp
+        modbus
+        mswsock.lib
+        ws2_32.lib
+    )
+elseif(UNIX)
+    target_link_libraries(${PROJECT_NAME}
+        PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
+        ${Boost_SYSTEM_LIBRARY}
+        ${Boost_THREAD_LIBRARY}
+        jsoncpp
+        modbus
+    )
+endif()
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

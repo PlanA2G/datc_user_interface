@@ -1,16 +1,19 @@
 #include "tcp_manager.hpp"
 
-#include <boost/thread.hpp>
-#include <boost/bind.hpp>
+//#include <boost/thread.hpp>
+//#include <boost/bind.hpp>
 #include <iostream>
 #include <system_error>
+#include <unistd.h>
 
 TcpServer::TcpServer(const int port)
     :acceptor_(io_service_, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), port)) {
 
     startAccept();
 
-    boost::thread io_service_thread(boost::bind(&boost::asio::io_service::run, &io_service_));
+//    boost::thread io_service_thread(boost::bind(&boost::asio::io_service::run, &io_service_));
+    std::thread io_service_thread([&] () {io_service_.run();});
+    io_service_thread.detach();
 }
 
 TcpServer::~TcpServer() {
@@ -20,8 +23,8 @@ TcpServer::~TcpServer() {
 
 void TcpServer::startAccept() {
     TcpSocket *socket = new TcpSocket(io_service_);
-    acceptor_.async_accept(socket->getSocket(), boost::bind(&TcpServer::acceptHandler, this, socket, boost::asio::placeholders::error));
-
+//    acceptor_.async_accept(socket->getSocket(), boost::bind(&TcpServer::acceptHandler, this, socket, boost::asio::placeholders::error));
+    acceptor_.async_accept(socket->getSocket(), std::bind(&TcpServer::acceptHandler, this, socket, std::placeholders::_1));
 }
 
 void TcpServer::acceptHandler(TcpSocket* socket, const boost::system::error_code& err) {
@@ -51,8 +54,11 @@ boost::asio::ip::tcp::socket &TcpSocket::getSocket() {
 
 void TcpSocket::start() {
     message_handler_.createClientQueue(socket_.native_handle());
-    boost::thread parse_thread(boost::bind(&TcpSocket::writeHandler, this));
-    socket_.async_read_some(boost::asio::buffer(buffer_, MAX_BUFFER), boost::bind(&TcpSocket::readHandler, this, boost::asio::placeholders::error, boost::asio::placeholders::bytes_transferred));
+//    boost::thread parse_thread(boost::bind(&TcpSocket::writeHandler, this));
+    std::thread parse_thread(std::bind(&TcpSocket::writeHandler, this));
+    parse_thread.detach();
+//    socket_.async_read_some(boost::asio::buffer(buffer_, MAX_BUFFER), boost::bind(&TcpSocket::readHandler, this, boost::asio::placeholders::error, boost::asio::placeholders::bytes_transferred));
+    socket_.async_read_some(boost::asio::buffer(buffer_, MAX_BUFFER), std::bind(&TcpSocket::readHandler, this, std::placeholders::_1, std::placeholders::_2));
 }
 
 void TcpSocket::close() {
@@ -101,7 +107,8 @@ void TcpSocket::readHandler(const boost::system::error_code& err, size_t bytes_t
         }
 
         usleep(10000);
-        socket_.async_read_some(boost::asio::buffer(buffer_, MAX_BUFFER), boost::bind(&TcpSocket::readHandler, this, boost::asio::placeholders::error, boost::asio::placeholders::bytes_transferred));
+//        socket_.async_read_some(boost::asio::buffer(buffer_, MAX_BUFFER), boost::bind(&TcpSocket::readHandler, this, boost::asio::placeholders::error, boost::asio::placeholders::bytes_transferred));
+        socket_.async_read_some(boost::asio::buffer(buffer_, MAX_BUFFER), std::bind(&TcpSocket::readHandler, this, std::placeholders::_1, std::placeholders::_2));
     } else {
         boost::system::error_code error_temp = err;
         cout << "Read error: " << err.message() << endl;

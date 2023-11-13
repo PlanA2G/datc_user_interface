@@ -32,9 +32,13 @@
 #define TCP_MANAGER_HPP
 
 #include <boost/asio.hpp>
-#include <jsoncpp/json/json.h>
-
 #include "message_manager.hpp"
+
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__)
+#include "../lib/json.h"
+#else
+#include <jsoncpp/json/json.h>
+#endif
 
 using namespace std;
 using namespace tcp_communication;
