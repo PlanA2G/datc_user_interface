@@ -22,6 +22,13 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 if(WIN32)
+    include_directories(
+        ${PROJECT_SOURCE_DIR}/include
+        ${PROJECT_SOURCE_DIR}/include/socket
+    )
+
+    set(CMAKE_AUTOUIC_SEARCH_PATHS ${PROJECT_SOURCE_DIR}/ui)
+
     file(GLOB ${PROJECT_NAME}_SRCS
         *.cpp
         *.hpp
@@ -31,12 +38,18 @@ if(WIN32)
         lib/*.h
     )
 elseif(UNIX)
+    include_directories(
+        ${PROJECT_SOURCE_DIR}/include
+        ${PROJECT_SOURCE_DIR}/include/socket
+    )
+
+    set(CMAKE_AUTOUIC_SEARCH_PATHS ${PROJECT_SOURCE_DIR}/ui)
+
     file(GLOB ${PROJECT_NAME}_SRCS
-        *.cpp
-        *.hpp
-        *.ui
-        socket/*.cpp
-        socket/*.hpp
+        src/*.cpp
+        src/socket/*.cpp
+        include/*.hpp
+        include/socket/*.hpp
     )
 else()
     message(FATAL_ERROR "Unsupported operating system")
@@ -70,8 +83,6 @@ if(WIN32)
 elseif(UNIX)
     target_link_libraries(${PROJECT_NAME}
         PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
-        ${Boost_SYSTEM_LIBRARY}
-        ${Boost_THREAD_LIBRARY}
         jsoncpp
         modbus
     )
