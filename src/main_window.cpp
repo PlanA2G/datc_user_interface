@@ -52,13 +52,14 @@ MainWindow::MainWindow(int argc, char **argv, bool &success, QWidget *parent): Q
             connect(timer_, SIGNAL(timeout()), this, SLOT(timerCallback()));
             timer_->start(100); // msec
             success = true;
+
+#ifndef RCLCPP__RCLCPP_HPP_
+            openTcpComm();
+#endif
         } else {
             COUT("[ERROR] Port name or slave address invlaid !");
         }
 
-#ifndef RCLCPP__RCLCPP_HPP_
-        openTcpComm();
-#endif
     } else {
         COUT("--------------------------------------------");
         COUT("[ERROR] Port name & Slave address required !");

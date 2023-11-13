@@ -23,6 +23,7 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 if(WIN32)
     include_directories(
+        ${PROJECT_SOURCE_DIR}/lib
         ${PROJECT_SOURCE_DIR}/include
         ${PROJECT_SOURCE_DIR}/include/socket
     )
@@ -30,11 +31,10 @@ if(WIN32)
     set(CMAKE_AUTOUIC_SEARCH_PATHS ${PROJECT_SOURCE_DIR}/ui)
 
     file(GLOB ${PROJECT_NAME}_SRCS
-        *.cpp
-        *.hpp
-        *.ui
-        socket/*.cpp
-        socket/*.hpp
+        src/*.cpp
+        src/socket/*.cpp
+        include/*.hpp
+        include/socket/*.hpp
         lib/*.h
     )
 elseif(UNIX)

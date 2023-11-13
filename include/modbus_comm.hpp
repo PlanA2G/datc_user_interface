@@ -12,7 +12,7 @@
 #define MODBUS_COMM_HPP
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__)
-#include "lib/modbus-rtu.h"
+#include "modbus-rtu.h"
 #include <unistd.h>
 #else
 #include <modbus/modbus-rtu.h>
