@@ -35,6 +35,8 @@ bool DatcCommInterface::init(const char *port_name, uint16_t slave_address) {
 }
 
 void DatcCommInterface::initTcp(const string addr, uint16_t socket_port) {
+    unique_lock<mutex> lg(mutex_tcp_);
+
     flag_tcp_stop_ = false;
 
     tcp_server_ = new TcpServer(socket_port);
@@ -44,6 +46,8 @@ void DatcCommInterface::initTcp(const string addr, uint16_t socket_port) {
 }
 
 void DatcCommInterface::releaseTcp() {
+    unique_lock<mutex> lg(mutex_tcp_);
+
     is_socket_connected_ = false;
     flag_tcp_stop_       = true;
 

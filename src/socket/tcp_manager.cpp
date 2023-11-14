@@ -18,8 +18,14 @@ TcpServer::TcpServer(const int port)
 
 TcpServer::~TcpServer() {
     acceptor_.close();
+    acceptor_.release();
     io_service_.stop();
-    usleep(1000);
+
+    while (!io_service_.stopped()) {
+        usleep(1000);
+    }
+
+    usleep(1000000);
 }
 
 void TcpServer::startAccept() {
