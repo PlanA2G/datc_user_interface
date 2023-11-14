@@ -72,11 +72,11 @@ public:
     }
 
     void modbusRelease() {
+        connection_state_ = false;
+
         unique_lock<mutex> lg(mutex_comm_);
 
         modbus_close(mb_);
-        connection_state_ = false;
-
         COUT("Modbus released");
     }
 

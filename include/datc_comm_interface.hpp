@@ -37,22 +37,26 @@ public:
     void initTcp(const string addr, uint16_t socket_port);
     void releaseTcp();
 
+    bool isSocketConnected() {return is_socket_connected_;}
+    bool getTcpSendStatus() {return flag_tcp_send_status_;}
+    void setTcpSendStatus(bool flag) {flag_tcp_send_status_ = flag;}
+
 private:
     void run();
     void sendStatus();
     void recvCommand();
 
-    bool flag_stop_ = false;
+    bool flag_program_stop_ = false;
 
     // TCP socket related variables
     TcpServer *tcp_server_;
     std::thread tcp_thread_;
 
-    bool flag_tcp_stop_       = false;
-    bool is_socket_connected_ = false;
+    bool flag_tcp_stop_        = false;
+    bool is_socket_connected_  = false;
+    bool flag_tcp_send_status_ = true;
 
     mutex mutex_tcp_;
-
 };
 
 #endif // DATC_COMM_INTERFACE_HPP

@@ -17,7 +17,7 @@ DatcCommInterface::DatcCommInterface(int argc, char **argv) {
 }
 
 DatcCommInterface::~DatcCommInterface() {
-    flag_stop_ = true;
+    flag_program_stop_ = true;
     usleep(1000);
 
     releaseTcp();
@@ -44,7 +44,9 @@ void DatcCommInterface::initTcp(const string addr, uint16_t socket_port) {
 }
 
 void DatcCommInterface::releaseTcp() {
-    flag_tcp_stop_ = true;
+    is_socket_connected_ = false;
+    flag_tcp_stop_       = true;
+
     usleep(100);
 
     if (tcp_thread_.joinable()) {
@@ -54,8 +56,6 @@ void DatcCommInterface::releaseTcp() {
     if (tcp_server_ != NULL) {
         tcp_server_->~TcpServer();
     }
-
-    is_socket_connected_ = false;
 }
 
 void DatcCommInterface::sendStatus() {
@@ -189,7 +189,7 @@ void DatcCommInterface::run() {
         if (mbc_.getConnectionState()) {
             readDatcData();
 
-            if (is_socket_connected_) {
+            if (is_socket_connected_ && flag_tcp_send_status_) {
                 sendStatus();
             }
         }
@@ -198,7 +198,7 @@ void DatcCommInterface::run() {
     std::thread thread_recv([&] () {
         const std::chrono::duration<double> period(1 / (double) kFreq);
 
-        while(!flag_stop_) {
+        while(!flag_program_stop_) {
             auto time_start = std::chrono::steady_clock::now();
 
             cycleFn();
@@ -215,7 +215,7 @@ void DatcCommInterface::run() {
         COUT("Recv thread joined.");
     });
 
-    while(!flag_stop_) {
+    while(!flag_program_stop_) {
 
     }
 

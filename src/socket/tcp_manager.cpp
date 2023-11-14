@@ -19,6 +19,7 @@ TcpServer::TcpServer(const int port)
 TcpServer::~TcpServer() {
     acceptor_.close();
     io_service_.stop();
+    usleep(1000);
 }
 
 void TcpServer::startAccept() {

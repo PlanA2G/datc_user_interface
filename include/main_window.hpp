@@ -66,8 +66,8 @@ public Q_SLOTS:
 
 #ifndef RCLCPP__RCLCPP_HPP_
     // TCP comm. related functions
-    void openTcpComm();
-    void closeTcpComm();
+    void startTcpComm();
+    void stopTcpComm();
 #endif
 
 private:

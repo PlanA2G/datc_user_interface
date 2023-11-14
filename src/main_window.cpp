@@ -20,7 +20,7 @@ MainWindow::MainWindow(int argc, char **argv, bool &success, QWidget *parent): Q
     //setWindowIcon(QIcon(":/images/icon.png"));
     datc_interface_ = new DatcCommInterface(argc, argv);
 
-    // Button mapping
+    // DATC control related btn
     QObject::connect(ui.pushButton_cmd_enable  , SIGNAL(clicked()), this, SLOT(datcEnable()));
     QObject::connect(ui.pushButton_cmd_disable , SIGNAL(clicked()), this, SLOT(datcDisable()));
     QObject::connect(ui.pushButton_set_position, SIGNAL(clicked()), this, SLOT(datcFingerPosCtrl()));
@@ -38,6 +38,10 @@ MainWindow::MainWindow(int argc, char **argv, bool &success, QWidget *parent): Q
     QObject::connect(ui.pushButton_modbus_stop , SIGNAL(clicked()), this, SLOT(releaseModbus()));
     QObject::connect(ui.pushButton_modbus_slave_change  , SIGNAL(clicked()), this, SLOT(changeSlaveAddress()));
     QObject::connect(ui.pushButton_modbus_set_slave_addr, SIGNAL(clicked()), this, SLOT(setSlaveAddr()));
+
+    // TCP socket commiunication related btn
+    QObject::connect(ui.pushButton_tcp_start, SIGNAL(clicked()), this, SLOT(startTcpComm()));
+    QObject::connect(ui.pushButton_tcp_stop , SIGNAL(clicked()), this, SLOT(stopTcpComm()));
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__)
     ui.lineEdit_serial_port->setText("COM4");
@@ -84,6 +88,14 @@ void MainWindow::timerCallback() {
     } else {
 
     }
+
+    // Socket comm. status check
+    const bool is_socket_connected = datc_interface_->isSocketConnected();
+
+    ui.pushButton_tcp_start->setEnabled(!is_socket_connected);
+    ui.pushButton_tcp_stop ->setEnabled(is_socket_connected);
+
+    datc_interface_->setTcpSendStatus(ui.checkBox_tcp_send_status->isChecked());
 }
 
 // Enable Disable
@@ -159,14 +171,14 @@ void MainWindow::setSlaveAddr() {
 
 #ifndef RCLCPP__RCLCPP_HPP_
 // TCP comm. related functions
-void MainWindow::openTcpComm() {
-    string addr          = "192.168.5.5";
-    uint16_t socket_port = 12345;
+void MainWindow::startTcpComm() {
+    string addr          = ui.lineEdit_tcp_addr->text().toStdString();
+    uint16_t socket_port = ui.lineEdit_tcp_port->text().toUInt();
 
     datc_interface_->initTcp(addr, socket_port);
 }
 
-void MainWindow::closeTcpComm() {
+void MainWindow::stopTcpComm() {
     datc_interface_->releaseTcp();
 }
 #endif
