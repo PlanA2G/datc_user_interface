@@ -73,7 +73,7 @@ public:
     DatcCtrl();
     ~DatcCtrl();
 
-    bool modbusInit(char *port_name, uint16_t slave_address);
+    bool modbusInit(const char *port_name, uint16_t slave_address);
     bool modbusRelease();
     bool modbusSlaveChange(uint16_t slave_addr);
 
@@ -101,6 +101,7 @@ public:
 
     bool readDatcData();
     DatcStatus getDatcStatus() {return status_;};
+    bool getConnectionState() {return mbc_.getConnectionState();}
 
 protected:
     bool checkDurationRange(string error_prefix, uint16_t &duration);

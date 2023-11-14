@@ -63,3 +63,4 @@ CMakeLists.txt.user
 CMakeLists.txt.user
 
 *.html
+.vscode

@@ -24,14 +24,13 @@ DatcCommInterface::~DatcCommInterface() {
     modbusRelease();
 }
 
-bool DatcCommInterface::init(char *port_name, uint16_t slave_address) {
+bool DatcCommInterface::init(const char *port_name, uint16_t slave_address) {
     if (!modbusInit(port_name, slave_address)) {
         return false;
     }
 
     COUT("DATC ros interface init.");
 
-    start();
     return true;
 }
 
@@ -52,7 +51,10 @@ void DatcCommInterface::releaseTcp() {
         tcp_thread_.join();
     }
 
-    tcp_server_->~TcpServer();
+    if (tcp_server_ != NULL) {
+        tcp_server_->~TcpServer();
+    }
+
     is_socket_connected_ = false;
 }
 
@@ -183,29 +185,34 @@ void DatcCommInterface::recvCommand() {
 
 // Main loop
 void DatcCommInterface::run() {
-    std::thread thread_recv([&] () {
-        double period = 1 / (double) kFreq;
+    auto cycleFn([&] () {
+        if (mbc_.getConnectionState()) {
+            readDatcData();
 
-        timespec time_prev, time_current;
-        clock_gettime(CLOCK_MONOTONIC, &time_prev);
-
-        while(!flag_stop_) {
-            clock_gettime(CLOCK_MONOTONIC, &time_current);
-
-            double dt = (time_current.tv_sec - time_prev.tv_sec) + ((time_current.tv_nsec - time_prev.tv_nsec) * 0.000000001);
-
-            if(dt >= period) {
-                if (mbc_.getConnectionState()) {
-                    readDatcData();
-
-                    if (is_socket_connected_) {
-                        sendStatus();
-                    }
-                }
-
-                time_prev = time_current;
+            if (is_socket_connected_) {
+                sendStatus();
             }
         }
+    });
+
+    std::thread thread_recv([&] () {
+        const std::chrono::duration<double> period(1 / (double) kFreq);
+
+        while(!flag_stop_) {
+            auto time_start = std::chrono::steady_clock::now();
+
+            cycleFn();
+
+            // Calculate the time elapsed and sleep for the remaining time
+            auto time_end = std::chrono::steady_clock::now();
+            auto time_elapsed = time_end - time_start;
+
+            if (time_elapsed < period) {
+                std::this_thread::sleep_for(period - time_elapsed);
+            }
+        }
+
+        COUT("Recv thread joined.");
     });
 
     while(!flag_stop_) {
@@ -214,5 +221,7 @@ void DatcCommInterface::run() {
 
     motorDisable();
     modbusRelease();
+
+    thread_recv.detach();
 }
 

@@ -39,7 +39,7 @@ public:
         modbusRelease();
     }
 
-    bool modbusInit(char *port_name, uint16_t slave_address) {
+    bool modbusInit(const char *port_name, uint16_t slave_address) {
         unique_lock<mutex> lg(mutex_comm_);
 
         mb_ = modbus_new_rtu(port_name, BAUDRATE, PARITY_MODE, DATA_BIT, STOP_BIT);
@@ -176,7 +176,7 @@ private:
     mutex mutex_comm_;
     modbus_t *mb_;
 
-    bool connection_state_;
+    bool connection_state_ = false;
 };
 
 #endif // MODBUS_COMM_HPP

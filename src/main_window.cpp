@@ -33,43 +33,29 @@ MainWindow::MainWindow(int argc, char **argv, bool &success, QWidget *parent): Q
 
     QObject::connect(ui.pushButton_set_torque_ratio, SIGNAL(clicked()), this, SLOT(datcSetTorque()));
 
-    if (argc >= 0) {
+    // Modbus RTU related btn
+    QObject::connect(ui.pushButton_modbus_start, SIGNAL(clicked()), this, SLOT(initModbus()));
+    QObject::connect(ui.pushButton_modbus_stop , SIGNAL(clicked()), this, SLOT(releaseModbus()));
+    QObject::connect(ui.pushButton_modbus_slave_change  , SIGNAL(clicked()), this, SLOT(changeSlaveAddress()));
+    QObject::connect(ui.pushButton_modbus_set_slave_addr, SIGNAL(clicked()), this, SLOT(setSlaveAddr()));
+
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__)
-        char* port = "COM4";
+    ui.lineEdit_serial_port->setText("COM4");
 #else
-        char* port = "/dev/ttyUSB0";
+    ui.lineEdit_serial_port->setText("/dev/ttyUSB0");
 #endif
-//        string address_str = argv[2];        
-//        uint16_t slave_address = stoi(address_str);
 
-        COUT("--------------------------------------------");
-        COUT("[INFO] Port: ");
-//        cout << "[INFO] Slave address #" << slave_address << endl;
-        COUT("--------------------------------------------");
+    timer_ = new QTimer(this);
+    connect(timer_, SIGNAL(timeout()), this, SLOT(timerCallback()));
+    timer_->start(100); // msec
 
-        if (datc_interface_->init(port, 1)) {
-            timer_ = new QTimer(this);
-            connect(timer_, SIGNAL(timeout()), this, SLOT(timerCallback()));
-            timer_->start(100); // msec
-            success = true;
-
-#ifndef RCLCPP__RCLCPP_HPP_
-            openTcpComm();
-#endif
-        } else {
-            COUT("[ERROR] Port name or slave address invlaid !");
-        }
-
-    } else {
-        COUT("--------------------------------------------");
-        COUT("[ERROR] Port name & Slave address required !");
-        COUT("--------------------------------------------");
-    }
+    datc_interface_->start();
+    success = true;
 }
 
 MainWindow::~MainWindow() {
     if(datc_interface_ != NULL) {
-        delete datc_interface_;
+        datc_interface_->~DatcCommInterface();
     }
 
     if(timer_ != NULL) {
@@ -84,8 +70,23 @@ void MainWindow::timerCallback() {
     ui.lineEdit_monitor_position-> setText(QString::number((double) datc_status.finger_pos / 100 , 'f', 1) + " %");
     ui.lineEdit_monitor_current -> setText(QString::number(datc_status.motor_cur, 'd', 0) + " mA");
     ui.lineEdit_monitor_mode    -> setText(QString::fromStdString(datc_status.status_str));
+
+    // Comm. status check
+    const bool is_modbus_connected = datc_interface_->getConnectionState();
+
+    ui.pushButton_modbus_start->setEnabled(!is_modbus_connected);
+    ui.pushButton_modbus_stop ->setEnabled(is_modbus_connected);
+    ui.pushButton_modbus_set_slave_addr->setEnabled(is_modbus_connected);
+    ui.pushButton_modbus_slave_change->setEnabled(is_modbus_connected);
+
+    if (is_modbus_connected) {
+
+    } else {
+
+    }
 }
 
+// Enable Disable
 void MainWindow::datcEnable() {
     datc_interface_->motorEnable();
 }
@@ -94,6 +95,7 @@ void MainWindow::datcDisable() {
     datc_interface_->motorDisable();
 }
 
+// Datc control
 void MainWindow::datcFingerPosCtrl() {
     datc_interface_->setFingerPos(ui.doubleSpinBox_grpPos_ctrl_range_1->value() * 100);
 }
@@ -123,6 +125,35 @@ void MainWindow::datcSetTorque() {
 }
 
 void MainWindow::datcSetSpeed() {
+
+}
+
+// Modbus RTU related
+void MainWindow::initModbus() {
+    COUT("--------------------------------------------");
+    COUT("[INFO] Port: " + ui.lineEdit_serial_port->text().toStdString());
+    COUT("[INFO] Slave address #" + ui.spinBox_slave_addr->text().toStdString());
+    COUT("--------------------------------------------");
+
+    const char* port = ui.lineEdit_serial_port->text().toStdString().c_str();
+    uint16_t slave_addr = ui.spinBox_slave_addr->value();
+
+    if (datc_interface_->init(port, slave_addr)) {
+
+    } else {
+        COUT("[ERROR] Port name or slave address invlaid !");
+    }
+}
+
+void MainWindow::releaseModbus() {
+    datc_interface_->modbusRelease();
+}
+
+void MainWindow::changeSlaveAddress() {
+
+}
+
+void MainWindow::setSlaveAddr() {
 
 }
 

@@ -24,7 +24,8 @@
 #ifdef RCLCPP__RCLCPP_HPP_
 #include "gripper_test/ui_gripper_window.h"
 #else
-#include "./ui_gripper_window.h"
+//#include "./ui_gripper_window.h"
+#include "ui_gripper_window.h"
 #endif
 
 using namespace std;
@@ -39,7 +40,6 @@ public:
     ~MainWindow();
 
 public Q_SLOTS:
-
     void timerCallback();
 
     // Enable & disable
@@ -58,13 +58,17 @@ public Q_SLOTS:
     void datcSetTorque();
     void datcSetSpeed();
 
+    // Modbus RTU related
+    void initModbus();
+    void releaseModbus();
+    void changeSlaveAddress();
+    void setSlaveAddr();
+
 #ifndef RCLCPP__RCLCPP_HPP_
     // TCP comm. related functions
     void openTcpComm();
     void closeTcpComm();
 #endif
-
-
 
 private:
 #ifdef RCLCPP__RCLCPP_HPP_

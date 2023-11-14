@@ -14,6 +14,7 @@
 #include "datc_ctrl.hpp"
 #include <thread>
 #include <QThread>
+#include <chrono>
 #include <boost/asio.hpp>
 #include "socket/tcp_manager.hpp"
 
@@ -32,7 +33,7 @@ Q_SIGNALS:
     void rosShutdown();
 
 public:
-    bool init(char *port_name, uint16_t slave_address);
+    bool init(const char *port_name, uint16_t slave_address);
     void initTcp(const string addr, uint16_t socket_port);
     void releaseTcp();
 
