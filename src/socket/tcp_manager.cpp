@@ -18,7 +18,6 @@ TcpServer::TcpServer(const int port)
 
 TcpServer::~TcpServer() {
     acceptor_.close();
-    acceptor_.release();
     io_service_.stop();
 
     while (!io_service_.stopped()) {
