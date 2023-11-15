@@ -7,8 +7,7 @@
 #include <unistd.h>
 
 TcpServer::TcpServer(const int port)
-    :acceptor_(io_service_, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), port)) {
-
+        :acceptor_(io_service_, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), port)) {
     startAccept();
 
 //    boost::thread io_service_thread(boost::bind(&boost::asio::io_service::run, &io_service_));

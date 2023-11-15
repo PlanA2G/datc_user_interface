@@ -50,6 +50,7 @@ elseif(UNIX)
         src/socket/*.cpp
         include/*.hpp
         include/socket/*.hpp
+        asset/*/*.qrc
     )
 else()
     message(FATAL_ERROR "Unsupported operating system")
@@ -61,6 +62,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(${PROJECT_NAME}
         MANUAL_FINALIZATION
         ${${PROJECT_NAME}_SRCS}
+        include/custom_widget.hpp
+#        ui/main_window.ui
+#        ui/modbus_form.ui
+#        ui/datc_control_form.ui
+#        ui/tcp_form.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET datc_user_interface APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
