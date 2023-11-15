@@ -10,11 +10,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 if(WIN32)
-    #set(Boost_USE_MULTITHREAD ON)
-    #set(Boost_NAMESPACE "boost-1_74_0")
     include_directories("C:/boost_1_74_0")
 elseif(UNIX)
-#    find_package(Boost REQUIRED COMPONENTS system thread)
     find_package(Boost REQUIRED)
 endif()
 
@@ -36,6 +33,7 @@ if(WIN32)
         include/*.hpp
         include/socket/*.hpp
         lib/*.h
+        asset/*/*.qrc
     )
 elseif(UNIX)
     include_directories(
