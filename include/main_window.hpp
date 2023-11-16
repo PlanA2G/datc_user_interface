@@ -20,15 +20,8 @@
 #include <math.h>
 
 #include "datc_comm_interface.hpp"
-
-#ifdef RCLCPP__RCLCPP_HPP_
-#include "gripper_test/ui_gripper_window.h"
-#else
-//#include "./ui_gripper_window.h"
-//#include "ui_gripper_window.h"
 #include "ui_main_window.h"
 #include "custom_widget.hpp"
-#endif
 
 using namespace std;
 
@@ -84,11 +77,7 @@ public Q_SLOTS:
     void on_pushButton_select_tcp_clicked();
 
 private:
-#ifdef RCLCPP__RCLCPP_HPP_
-    Ui::MainWindowDesign ui;
-#else
     Ui::MainWindow *ui_;
-#endif
 
     ModbusWidget   *modbus_widget_;
     DatcCtrlWidget *datc_ctrl_widget_;

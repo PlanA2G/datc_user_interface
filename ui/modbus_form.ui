@@ -46,7 +46,7 @@
 #pushButton_modbus_start{
 	background-color:#555555;
 	color:#FFFFFF;
-	padding:3px;
+
 	border-top-left-radius:20px;
 	border-bottom-left-radius:20px;
 }
@@ -54,7 +54,6 @@
 #pushButton_modbus_stop{
 	background-color:#555555;
 	color:#FFFFFF;
-	padding:3px;
 	border-top-right-radius:20px;
 	border-bottom-right-radius:20px;
 }
@@ -62,14 +61,12 @@
 #pushButton_modbus_slave_change{
 	background-color:#555555;
 	color:#FFFFFF;
-	padding:3px;
 	border-radius:20px
 }
 
 #pushButton_modbus_set_slave_addr{
 	background-color:#555555;
 	color:#FFFFFF;
-	padding:3px;
 	border-top-right-radius:20px;
 	border-bottom-right-radius:20px;
 }
@@ -78,7 +75,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="leftMargin">
-    <number>25</number>
+    <number>10</number>
    </property>
    <property name="topMargin">
     <number>10</number>
@@ -470,7 +467,7 @@
          <property name="font">
           <font>
            <family>Noto Sans CJK HK</family>
-           <pointsize>16</pointsize>
+           <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -684,7 +681,7 @@
          <property name="font">
           <font>
            <family>Noto Sans CJK HK</family>
-           <pointsize>16</pointsize>
+           <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -696,6 +693,24 @@
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_modbus_slave_change">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>170</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>170</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="palette">
           <palette>
            <active>

@@ -34,15 +34,13 @@
 #pushButton_tcp_start{
 	background-color:#555555;
 	color:#FFFFFF;
-	padding:7px;
 	border-top-left-radius:20px;
 	border-bottom-left-radius:20px;
 }
 
 #pushButton_tcp_stop{
-	background-color:#CCCCCC;
-	color:#FF0000;
-	padding:7px;
+	background-color:#555555;
+	color:#FFFFFF;
 	border-top-right-radius:20px;
 	border-bottom-right-radius:20px;
 }
@@ -58,7 +56,7 @@ QLineEdit{
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="leftMargin">
-    <number>25</number>
+    <number>10</number>
    </property>
    <property name="topMargin">
     <number>10</number>
@@ -418,7 +416,9 @@ QLineEdit{
          <property name="font">
           <font>
            <family>Noto Sans CJK HK</family>
-           <pointsize>16</pointsize>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
           </font>
          </property>
          <property name="text">
@@ -431,7 +431,9 @@ QLineEdit{
          <property name="font">
           <font>
            <family>Noto Sans CJK HK</family>
-           <pointsize>16</pointsize>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
           </font>
          </property>
          <property name="text">
