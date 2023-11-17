@@ -199,33 +199,23 @@ void DatcCommInterface::run() {
         }
     });
 
-    std::thread thread_recv([&] () {
-        const std::chrono::duration<double> period(1 / (double) kFreq);
-
-        while(!flag_program_stop_) {
-            auto time_start = std::chrono::steady_clock::now();
-
-            cycleFn();
-
-            // Calculate the time elapsed and sleep for the remaining time
-            auto time_end = std::chrono::steady_clock::now();
-            auto time_elapsed = time_end - time_start;
-
-            if (time_elapsed < period) {
-                std::this_thread::sleep_for(period - time_elapsed);
-            }
-        }
-
-        COUT("Recv thread joined.");
-    });
+    const std::chrono::duration<double> period(1 / (double) kFreq);
 
     while(!flag_program_stop_) {
+        auto time_start = std::chrono::steady_clock::now();
 
+        cycleFn();
+
+        // Calculate the time elapsed and sleep for the remaining time
+        auto time_end = std::chrono::steady_clock::now();
+        auto time_elapsed = time_end - time_start;
+
+        if (time_elapsed < period) {
+            std::this_thread::sleep_for(period - time_elapsed);
+        }
     }
 
     motorDisable();
     modbusRelease();
-
-    thread_recv.detach();
 }
 

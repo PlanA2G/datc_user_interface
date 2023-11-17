@@ -199,7 +199,7 @@ QSlider::sub-page:horizontal {
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -264,7 +264,7 @@ QSlider::sub-page:horizontal {
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -329,7 +329,7 @@ QSlider::sub-page:horizontal {
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -343,7 +343,6 @@ QSlider::sub-page:horizontal {
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -497,7 +496,7 @@ QSlider::sub-page:horizontal {
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -643,7 +642,7 @@ QSlider::sub-page:horizontal {
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -789,7 +788,7 @@ QSlider::sub-page:horizontal {
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -803,7 +802,6 @@ QSlider::sub-page:horizontal {
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -877,7 +875,7 @@ Enable</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -942,7 +940,7 @@ Enable</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -1007,7 +1005,7 @@ Enable</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -1021,7 +1019,6 @@ Enable</string>
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -1045,7 +1042,6 @@ Disable</string>
          <property name="font">
           <font>
            <family>Noto Sans KR Medium</family>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -1121,7 +1117,7 @@ Disable</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -1186,7 +1182,7 @@ Disable</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -1251,7 +1247,7 @@ Disable</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -1265,7 +1261,6 @@ Disable</string>
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -1338,7 +1333,7 @@ Disable</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -1403,7 +1398,7 @@ Disable</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -1468,7 +1463,7 @@ Disable</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -1482,7 +1477,6 @@ Disable</string>
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -1556,7 +1550,7 @@ Open</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -1621,7 +1615,7 @@ Open</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -1686,7 +1680,7 @@ Open</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -1700,7 +1694,6 @@ Open</string>
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -1724,7 +1717,6 @@ Close</string>
          <property name="font">
           <font>
            <family>Noto Sans KR Medium</family>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -1800,7 +1792,7 @@ Close</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -1865,7 +1857,7 @@ Close</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -1930,7 +1922,7 @@ Close</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -1944,7 +1936,6 @@ Close</string>
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -2018,7 +2009,7 @@ Gripper On</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -2083,7 +2074,7 @@ Gripper On</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -2148,7 +2139,7 @@ Gripper On</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -2162,7 +2153,6 @@ Gripper On</string>
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -2188,7 +2178,6 @@ Gripper Off</string>
        <property name="font">
         <font>
          <family>Noto Sans KR Medium</family>
-         <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
@@ -2213,7 +2202,6 @@ Gripper Off</string>
             <font>
              <family>Noto Sans KR Medium</family>
              <pointsize>16</pointsize>
-             <weight>50</weight>
              <bold>false</bold>
             </font>
            </property>
@@ -2234,7 +2222,6 @@ Gripper Off</string>
                <property name="font">
                 <font>
                  <family>Noto Sans KR Medium</family>
-                 <weight>50</weight>
                  <bold>false</bold>
                 </font>
                </property>
@@ -2257,7 +2244,6 @@ Gripper Off</string>
                <property name="font">
                 <font>
                  <family>Noto Sans KR Medium</family>
-                 <weight>50</weight>
                  <bold>false</bold>
                 </font>
                </property>
@@ -2307,7 +2293,6 @@ Gripper Off</string>
                 <font>
                  <family>Noto Sans KR Medium</family>
                  <pointsize>12</pointsize>
-                 <weight>50</weight>
                  <bold>false</bold>
                 </font>
                </property>
@@ -2325,7 +2310,6 @@ Gripper Off</string>
                 <font>
                  <family>Noto Sans KR Medium</family>
                  <pointsize>12</pointsize>
-                 <weight>50</weight>
                  <bold>false</bold>
                 </font>
                </property>
@@ -2343,7 +2327,6 @@ Gripper Off</string>
                 <font>
                  <family>Noto Sans KR Medium</family>
                  <pointsize>12</pointsize>
-                 <weight>50</weight>
                  <bold>false</bold>
                 </font>
                </property>
@@ -2361,7 +2344,6 @@ Gripper Off</string>
                 <font>
                  <family>Noto Sans KR Medium</family>
                  <pointsize>12</pointsize>
-                 <weight>50</weight>
                  <bold>false</bold>
                 </font>
                </property>
@@ -2379,7 +2361,6 @@ Gripper Off</string>
                 <font>
                  <family>Noto Sans KR Medium</family>
                  <pointsize>12</pointsize>
-                 <weight>50</weight>
                  <bold>false</bold>
                 </font>
                </property>
@@ -2397,7 +2378,6 @@ Gripper Off</string>
                 <font>
                  <family>Noto Sans KR Medium</family>
                  <pointsize>12</pointsize>
-                 <weight>50</weight>
                  <bold>false</bold>
                 </font>
                </property>
@@ -2494,7 +2474,7 @@ Gripper Off</string>
                 </colorrole>
                 <colorrole role="PlaceholderText">
                  <brush brushstyle="SolidPattern">
-                  <color alpha="255">
+                  <color alpha="128">
                    <red>255</red>
                    <green>255</green>
                    <blue>255</blue>
@@ -2559,7 +2539,7 @@ Gripper Off</string>
                 </colorrole>
                 <colorrole role="PlaceholderText">
                  <brush brushstyle="SolidPattern">
-                  <color alpha="255">
+                  <color alpha="128">
                    <red>255</red>
                    <green>255</green>
                    <blue>255</blue>
@@ -2624,7 +2604,7 @@ Gripper Off</string>
                 </colorrole>
                 <colorrole role="PlaceholderText">
                  <brush brushstyle="SolidPattern">
-                  <color alpha="255">
+                  <color alpha="128">
                    <red>255</red>
                    <green>255</green>
                    <blue>255</blue>
@@ -2638,7 +2618,6 @@ Gripper Off</string>
               <font>
                <family>Noto Sans KR Medium</family>
                <pointsize>14</pointsize>
-               <weight>50</weight>
                <bold>false</bold>
               </font>
              </property>
@@ -2652,11 +2631,16 @@ Gripper Off</string>
            </item>
            <item>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_finger_pos">
+             <property name="minimumSize">
+              <size>
+               <width>110</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="font">
               <font>
                <family>Noto Sans KR Medium</family>
                <pointsize>14</pointsize>
-               <weight>50</weight>
                <bold>false</bold>
               </font>
              </property>
@@ -2679,7 +2663,6 @@ Gripper Off</string>
              <property name="font">
               <font>
                <family>Noto Sans KR Medium</family>
-               <weight>50</weight>
                <bold>false</bold>
               </font>
              </property>
@@ -2709,7 +2692,6 @@ Gripper Off</string>
          <property name="font">
           <font>
            <family>Noto Sans KR Medium</family>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -2734,7 +2716,6 @@ Gripper Off</string>
               <font>
                <family>Noto Sans KR Medium</family>
                <pointsize>14</pointsize>
-               <weight>50</weight>
                <bold>false</bold>
               </font>
              </property>
@@ -2764,7 +2745,6 @@ Gripper Off</string>
               <font>
                <family>Noto Sans KR Medium</family>
                <pointsize>16</pointsize>
-               <weight>50</weight>
                <bold>false</bold>
               </font>
              </property>
@@ -2849,7 +2829,7 @@ Gripper Off</string>
                 </colorrole>
                 <colorrole role="PlaceholderText">
                  <brush brushstyle="SolidPattern">
-                  <color alpha="255">
+                  <color alpha="128">
                    <red>255</red>
                    <green>255</green>
                    <blue>255</blue>
@@ -2914,7 +2894,7 @@ Gripper Off</string>
                 </colorrole>
                 <colorrole role="PlaceholderText">
                  <brush brushstyle="SolidPattern">
-                  <color alpha="255">
+                  <color alpha="128">
                    <red>255</red>
                    <green>255</green>
                    <blue>255</blue>
@@ -2979,7 +2959,7 @@ Gripper Off</string>
                 </colorrole>
                 <colorrole role="PlaceholderText">
                  <brush brushstyle="SolidPattern">
-                  <color alpha="255">
+                  <color alpha="128">
                    <red>255</red>
                    <green>255</green>
                    <blue>255</blue>
@@ -2993,7 +2973,6 @@ Gripper Off</string>
               <font>
                <family>Noto Sans KR Medium</family>
                <pointsize>14</pointsize>
-               <weight>50</weight>
                <bold>false</bold>
               </font>
              </property>
@@ -3010,7 +2989,6 @@ Gripper Off</string>
              <property name="font">
               <font>
                <family>Noto Sans KR Medium</family>
-               <weight>50</weight>
                <bold>false</bold>
               </font>
              </property>
@@ -3034,7 +3012,6 @@ Gripper Off</string>
                  <property name="font">
                   <font>
                    <family>Noto Sans KR Medium</family>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3057,7 +3034,6 @@ Gripper Off</string>
                  <property name="font">
                   <font>
                    <family>Noto Sans KR Medium</family>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3086,7 +3062,6 @@ Gripper Off</string>
                  <property name="font">
                   <font>
                    <family>Noto Sans KR Medium</family>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3114,7 +3089,6 @@ Gripper Off</string>
                   <font>
                    <family>Noto Sans KR Medium</family>
                    <pointsize>12</pointsize>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3132,7 +3106,6 @@ Gripper Off</string>
                   <font>
                    <family>Noto Sans KR Medium</family>
                    <pointsize>12</pointsize>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3150,7 +3123,6 @@ Gripper Off</string>
                   <font>
                    <family>Noto Sans KR Medium</family>
                    <pointsize>12</pointsize>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3168,7 +3140,6 @@ Gripper Off</string>
                   <font>
                    <family>Noto Sans KR Medium</family>
                    <pointsize>12</pointsize>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3186,7 +3157,6 @@ Gripper Off</string>
                   <font>
                    <family>Noto Sans KR Medium</family>
                    <pointsize>12</pointsize>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3204,7 +3174,6 @@ Gripper Off</string>
                   <font>
                    <family>Noto Sans KR Medium</family>
                    <pointsize>12</pointsize>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3233,7 +3202,6 @@ Gripper Off</string>
            <property name="font">
             <font>
              <family>Noto Sans KR Medium</family>
-             <weight>50</weight>
              <bold>false</bold>
             </font>
            </property>
@@ -3256,7 +3224,6 @@ Gripper Off</string>
               <font>
                <family>Noto Sans KR Medium</family>
                <pointsize>16</pointsize>
-               <weight>50</weight>
                <bold>false</bold>
               </font>
              </property>
@@ -3341,7 +3308,7 @@ Gripper Off</string>
                 </colorrole>
                 <colorrole role="PlaceholderText">
                  <brush brushstyle="SolidPattern">
-                  <color alpha="255">
+                  <color alpha="128">
                    <red>255</red>
                    <green>255</green>
                    <blue>255</blue>
@@ -3406,7 +3373,7 @@ Gripper Off</string>
                 </colorrole>
                 <colorrole role="PlaceholderText">
                  <brush brushstyle="SolidPattern">
-                  <color alpha="255">
+                  <color alpha="128">
                    <red>255</red>
                    <green>255</green>
                    <blue>255</blue>
@@ -3471,7 +3438,7 @@ Gripper Off</string>
                 </colorrole>
                 <colorrole role="PlaceholderText">
                  <brush brushstyle="SolidPattern">
-                  <color alpha="255">
+                  <color alpha="128">
                    <red>255</red>
                    <green>255</green>
                    <blue>255</blue>
@@ -3485,7 +3452,6 @@ Gripper Off</string>
               <font>
                <family>Noto Sans KR Medium</family>
                <pointsize>14</pointsize>
-               <weight>50</weight>
                <bold>false</bold>
               </font>
              </property>
@@ -3506,7 +3472,6 @@ Gripper Off</string>
                  <property name="font">
                   <font>
                    <family>Noto Sans KR Medium</family>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3529,7 +3494,6 @@ Gripper Off</string>
                  <property name="font">
                   <font>
                    <family>Noto Sans KR Medium</family>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3558,7 +3522,6 @@ Gripper Off</string>
                  <property name="font">
                   <font>
                    <family>Noto Sans KR Medium</family>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3586,7 +3549,6 @@ Gripper Off</string>
                   <font>
                    <family>Noto Sans KR Medium</family>
                    <pointsize>12</pointsize>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3604,7 +3566,6 @@ Gripper Off</string>
                   <font>
                    <family>Noto Sans KR Medium</family>
                    <pointsize>12</pointsize>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3622,7 +3583,6 @@ Gripper Off</string>
                   <font>
                    <family>Noto Sans KR Medium</family>
                    <pointsize>12</pointsize>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3640,7 +3600,6 @@ Gripper Off</string>
                   <font>
                    <family>Noto Sans KR Medium</family>
                    <pointsize>12</pointsize>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3658,7 +3617,6 @@ Gripper Off</string>
                   <font>
                    <family>Noto Sans KR Medium</family>
                    <pointsize>12</pointsize>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3676,7 +3634,6 @@ Gripper Off</string>
                   <font>
                    <family>Noto Sans KR Medium</family>
                    <pointsize>12</pointsize>
-                   <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -3698,7 +3655,6 @@ Gripper Off</string>
               <font>
                <family>Noto Sans KR Medium</family>
                <pointsize>14</pointsize>
-               <weight>50</weight>
                <bold>false</bold>
               </font>
              </property>
@@ -3727,7 +3683,6 @@ Gripper Off</string>
              <property name="font">
               <font>
                <family>Noto Sans KR Medium</family>
-               <weight>50</weight>
                <bold>false</bold>
               </font>
              </property>
