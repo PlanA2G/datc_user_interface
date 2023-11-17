@@ -105,6 +105,11 @@ QLineEdit{
         <height>106</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <family>Noto Sans CJK KR</family>
+       </font>
+      </property>
       <layout class="QGridLayout" name="gridLayout">
        <item row="0" column="0">
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -149,7 +154,7 @@ QLineEdit{
            </property>
            <property name="font">
             <font>
-             <family>Noto Sans CJK HK</family>
+             <family>Noto Sans CJK KR</family>
              <pointsize>24</pointsize>
              <weight>75</weight>
              <bold>true</bold>
@@ -201,7 +206,7 @@ QLineEdit{
            </property>
            <property name="font">
             <font>
-             <family>Noto Sans CJK HK</family>
+             <family>Noto Sans CJK KR</family>
              <pointsize>16</pointsize>
              <weight>75</weight>
              <bold>true</bold>
@@ -263,7 +268,7 @@ QLineEdit{
            </property>
            <property name="font">
             <font>
-             <family>Noto Sans CJK HK</family>
+             <family>Noto Sans CJK KR</family>
              <pointsize>16</pointsize>
              <weight>75</weight>
              <bold>true</bold>
@@ -278,7 +283,7 @@ QLineEdit{
           <widget class="QLineEdit" name="lineEdit_monitor_mode">
            <property name="font">
             <font>
-             <family>Noto Sans CJK HK</family>
+             <family>Noto Sans CJK KR</family>
              <pointsize>14</pointsize>
              <weight>75</weight>
              <bold>true</bold>
@@ -293,6 +298,11 @@ QLineEdit{
        </item>
        <item row="0" column="2">
         <widget class="Line" name="line">
+         <property name="font">
+          <font>
+           <family>Noto Sans CJK KR</family>
+          </font>
+         </property>
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -349,7 +359,7 @@ QLineEdit{
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans CJK HK</family>
+               <family>Noto Sans CJK KR</family>
                <pointsize>14</pointsize>
                <weight>75</weight>
                <bold>true</bold>
@@ -376,7 +386,7 @@ QLineEdit{
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans CJK HK</family>
+               <family>Noto Sans CJK KR</family>
                <pointsize>14</pointsize>
                <weight>75</weight>
                <bold>true</bold>
@@ -437,7 +447,7 @@ QLineEdit{
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans CJK HK</family>
+               <family>Noto Sans CJK KR</family>
                <pointsize>14</pointsize>
                <weight>75</weight>
                <bold>true</bold>
@@ -464,7 +474,7 @@ QLineEdit{
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans CJK HK</family>
+               <family>Noto Sans CJK KR</family>
                <pointsize>14</pointsize>
                <weight>75</weight>
                <bold>true</bold>
@@ -482,6 +492,11 @@ QLineEdit{
          </item>
          <item>
           <widget class="Line" name="line_4">
+           <property name="font">
+            <font>
+             <family>Noto Sans CJK KR</family>
+            </font>
+           </property>
            <property name="orientation">
             <enum>Qt::Vertical</enum>
            </property>
@@ -536,7 +551,7 @@ QLineEdit{
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans CJK HK</family>
+               <family>Noto Sans CJK KR</family>
                <pointsize>10</pointsize>
                <weight>75</weight>
                <bold>true</bold>
@@ -566,7 +581,7 @@ QLineEdit{
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans CJK HK</family>
+               <family>Noto Sans CJK KR</family>
                <pointsize>12</pointsize>
                <weight>75</weight>
                <bold>true</bold>
@@ -601,6 +616,11 @@ QLineEdit{
         <height>16777215</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <family>Noto Sans CJK KR</family>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -630,6 +650,11 @@ QLineEdit{
            <width>200</width>
            <height>0</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Noto Sans CJK KR</family>
+          </font>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <property name="spacing">
@@ -754,7 +779,7 @@ QLineEdit{
             </property>
             <property name="font">
              <font>
-              <family>Noto Sans CJK HK</family>
+              <family>Noto Sans CJK KR</family>
               <pointsize>14</pointsize>
               <weight>75</weight>
               <bold>true</bold>
@@ -995,7 +1020,7 @@ QLineEdit{
             </property>
             <property name="font">
              <font>
-              <family>Noto Sans CJK HK</family>
+              <family>Noto Sans CJK KR</family>
               <pointsize>14</pointsize>
               <weight>75</weight>
               <bold>true</bold>
@@ -1234,7 +1259,7 @@ QLineEdit{
             </property>
             <property name="font">
              <font>
-              <family>Noto Sans CJK HK</family>
+              <family>Noto Sans CJK KR</family>
               <pointsize>14</pointsize>
               <weight>75</weight>
               <bold>true</bold>
@@ -1473,7 +1498,7 @@ QLineEdit{
             </property>
             <property name="font">
              <font>
-              <family>Noto Sans CJK HK</family>
+              <family>Noto Sans CJK KR</family>
               <pointsize>14</pointsize>
               <weight>75</weight>
               <bold>true</bold>
@@ -1499,6 +1524,11 @@ QLineEdit{
           </item>
           <item>
            <spacer name="verticalSpacer">
+            <property name="font">
+             <font>
+              <family>Noto Sans CJK KR</family>
+             </font>
+            </property>
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
@@ -1512,6 +1542,11 @@ QLineEdit{
           </item>
           <item>
            <widget class="QPushButton" name="pushButton">
+            <property name="font">
+             <font>
+              <family>Noto Sans CJK KR</family>
+             </font>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -1534,7 +1569,13 @@ QLineEdit{
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QStackedWidget" name="stackedWidget"/>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="font">
+       <font>
+        <family>Noto Sans CJK KR</family>
+       </font>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

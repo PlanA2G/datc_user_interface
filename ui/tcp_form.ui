@@ -67,7 +67,7 @@ QLineEdit{
       <widget class="QLabel" name="label">
        <property name="font">
         <font>
-         <family>Noto Sans CJK HK</family>
+         <family>Noto Sans CJK KR</family>
          <pointsize>16</pointsize>
          <weight>75</weight>
          <bold>true</bold>
@@ -80,6 +80,11 @@ QLineEdit{
      </item>
      <item>
       <widget class="QFrame" name="frame">
+       <property name="font">
+        <font>
+         <family>Noto Sans CJK KR</family>
+        </font>
+       </property>
        <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
        </property>
@@ -209,7 +214,7 @@ QLineEdit{
           </property>
           <property name="font">
            <font>
-            <family>Noto Sans CJK HK</family>
+            <family>Noto Sans CJK KR</family>
             <pointsize>14</pointsize>
            </font>
           </property>
@@ -231,7 +236,7 @@ QLineEdit{
           </property>
           <property name="font">
            <font>
-            <family>Noto Sans CJK HK</family>
+            <family>Noto Sans CJK KR</family>
             <pointsize>14</pointsize>
            </font>
           </property>
@@ -362,7 +367,7 @@ QLineEdit{
           </property>
           <property name="font">
            <font>
-            <family>Noto Sans CJK HK</family>
+            <family>Noto Sans CJK KR</family>
             <pointsize>14</pointsize>
            </font>
           </property>
@@ -381,7 +386,7 @@ QLineEdit{
           </property>
           <property name="font">
            <font>
-            <family>Noto Sans CJK HK</family>
+            <family>Noto Sans CJK KR</family>
             <pointsize>14</pointsize>
            </font>
           </property>
@@ -398,6 +403,11 @@ QLineEdit{
      </item>
      <item>
       <spacer name="verticalSpacer_2">
+       <property name="font">
+        <font>
+         <family>Noto Sans CJK KR</family>
+        </font>
+       </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
@@ -418,7 +428,7 @@ QLineEdit{
         <widget class="QPushButton" name="pushButton_tcp_start">
          <property name="font">
           <font>
-           <family>Noto Sans CJK HK</family>
+           <family>Noto Sans CJK KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -433,7 +443,7 @@ QLineEdit{
         <widget class="QPushButton" name="pushButton_tcp_stop">
          <property name="font">
           <font>
-           <family>Noto Sans CJK HK</family>
+           <family>Noto Sans CJK KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -454,6 +464,11 @@ QLineEdit{
          <height>10</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <family>Noto Sans CJK KR</family>
+        </font>
+       </property>
        <property name="lineWidth">
         <number>1</number>
        </property>
@@ -469,7 +484,7 @@ QLineEdit{
       <widget class="QCheckBox" name="checkBox_tcp_send_status">
        <property name="font">
         <font>
-         <family>Noto Sans CJK HK</family>
+         <family>Noto Sans CJK KR</family>
          <pointsize>14</pointsize>
         </font>
        </property>

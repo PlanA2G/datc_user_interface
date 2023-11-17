@@ -87,7 +87,7 @@
       <widget class="QLabel" name="label">
        <property name="font">
         <font>
-         <family>Noto Sans CJK HK</family>
+         <family>Noto Sans CJK KR</family>
          <pointsize>16</pointsize>
          <weight>75</weight>
          <bold>true</bold>
@@ -100,6 +100,11 @@
      </item>
      <item>
       <widget class="QFrame" name="frame">
+       <property name="font">
+        <font>
+         <family>Noto Sans CJK KR</family>
+        </font>
+       </property>
        <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
        </property>
@@ -111,7 +116,7 @@
          <widget class="QLabel" name="label_1">
           <property name="font">
            <font>
-            <family>Noto Sans CJK HK</family>
+            <family>Noto Sans CJK KR</family>
             <pointsize>14</pointsize>
            </font>
           </property>
@@ -136,7 +141,7 @@
           </property>
           <property name="font">
            <font>
-            <family>Noto Sans CJK HK</family>
+            <family>Noto Sans CJK KR</family>
             <pointsize>14</pointsize>
            </font>
           </property>
@@ -149,7 +154,7 @@
          <widget class="QLabel" name="label_2">
           <property name="font">
            <font>
-            <family>Noto Sans CJK HK</family>
+            <family>Noto Sans CJK KR</family>
             <pointsize>14</pointsize>
            </font>
           </property>
@@ -169,7 +174,7 @@
           </property>
           <property name="font">
            <font>
-            <family>Noto Sans CJK HK</family>
+            <family>Noto Sans CJK KR</family>
             <pointsize>14</pointsize>
            </font>
           </property>
@@ -208,7 +213,7 @@
          <widget class="QLabel" name="label_3">
           <property name="font">
            <font>
-            <family>Noto Sans CJK HK</family>
+            <family>Noto Sans CJK KR</family>
             <pointsize>14</pointsize>
            </font>
           </property>
@@ -221,7 +226,7 @@
          <widget class="QSpinBox" name="spinBox_slave_addr">
           <property name="font">
            <font>
-            <family>Noto Sans CJK HK</family>
+            <family>Noto Sans CJK KR</family>
             <pointsize>14</pointsize>
            </font>
           </property>
@@ -241,6 +246,11 @@
      </item>
      <item>
       <spacer name="verticalSpacer_2">
+       <property name="font">
+        <font>
+         <family>Noto Sans CJK KR</family>
+        </font>
+       </property>
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
@@ -460,7 +470,7 @@
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans CJK HK</family>
+           <family>Noto Sans CJK KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -674,7 +684,7 @@
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans CJK HK</family>
+           <family>Noto Sans CJK KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -906,7 +916,7 @@
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans CJK HK</family>
+           <family>Noto Sans CJK KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -935,7 +945,7 @@
        </property>
        <property name="font">
         <font>
-         <family>Noto Sans CJK HK</family>
+         <family>Noto Sans CJK KR</family>
          <pointsize>16</pointsize>
         </font>
        </property>
@@ -959,7 +969,7 @@
         <widget class="QLabel" name="label_5">
          <property name="font">
           <font>
-           <family>Noto Sans CJK HK</family>
+           <family>Noto Sans CJK KR</family>
            <pointsize>14</pointsize>
           </font>
          </property>
@@ -972,7 +982,7 @@
         <widget class="QSpinBox" name="spinBox_slave_addr_4set">
          <property name="font">
           <font>
-           <family>Noto Sans CJK HK</family>
+           <family>Noto Sans CJK KR</family>
            <pointsize>14</pointsize>
           </font>
          </property>
@@ -1190,7 +1200,7 @@
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans CJK HK</family>
+           <family>Noto Sans CJK KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>

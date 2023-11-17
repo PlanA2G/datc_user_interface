@@ -341,7 +341,7 @@ QSlider::sub-page:horizontal {
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans CJK HK</family>
+           <family>Noto Sans CJK KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -801,7 +801,7 @@ QSlider::sub-page:horizontal {
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans CJK HK</family>
+           <family>Noto Sans CJK KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -1019,7 +1019,7 @@ Enable</string>
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans CJK HK</family>
+           <family>Noto Sans CJK KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -1041,6 +1041,11 @@ Disable</string>
            <width>0</width>
            <height>10</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Noto Sans CJK KR</family>
+          </font>
          </property>
          <property name="lineWidth">
           <number>1</number>
@@ -1256,7 +1261,7 @@ Disable</string>
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans CJK HK</family>
+           <family>Noto Sans CJK KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -1473,7 +1478,7 @@ Disable</string>
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans CJK HK</family>
+           <family>Noto Sans CJK KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -1691,7 +1696,7 @@ Open</string>
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans CJK HK</family>
+           <family>Noto Sans CJK KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -1713,6 +1718,11 @@ Close</string>
            <width>0</width>
            <height>10</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Noto Sans CJK KR</family>
+          </font>
          </property>
          <property name="lineWidth">
           <number>1</number>
@@ -1928,7 +1938,7 @@ Close</string>
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans CJK HK</family>
+           <family>Noto Sans CJK KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -2146,7 +2156,7 @@ Gripper On</string>
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans CJK HK</family>
+           <family>Noto Sans CJK KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -2171,6 +2181,11 @@ Gripper Off</string>
          <height>0</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <family>Noto Sans CJK KR</family>
+        </font>
+       </property>
        <property name="lineWidth">
         <number>1</number>
        </property>
@@ -2190,7 +2205,7 @@ Gripper Off</string>
           <widget class="QLabel" name="label_50">
            <property name="font">
             <font>
-             <family>Noto Sans CJK HK</family>
+             <family>Noto Sans CJK KR</family>
              <pointsize>16</pointsize>
              <weight>75</weight>
              <bold>true</bold>
@@ -2210,6 +2225,11 @@ Gripper Off</string>
             <layout class="QHBoxLayout" name="horizontalLayout_5">
              <item>
               <spacer name="horizontalSpacer">
+               <property name="font">
+                <font>
+                 <family>Noto Sans CJK KR</family>
+                </font>
+               </property>
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
@@ -2226,6 +2246,11 @@ Gripper Off</string>
              </item>
              <item>
               <widget class="QSlider" name="horizontalSlider_finger_pos">
+               <property name="font">
+                <font>
+                 <family>Noto Sans CJK KR</family>
+                </font>
+               </property>
                <property name="maximum">
                 <number>100</number>
                </property>
@@ -2270,7 +2295,7 @@ Gripper Off</string>
               <widget class="QLabel" name="label_70">
                <property name="font">
                 <font>
-                 <family>Noto Sans CJK HK</family>
+                 <family>Noto Sans CJK KR</family>
                  <pointsize>12</pointsize>
                 </font>
                </property>
@@ -2286,7 +2311,7 @@ Gripper Off</string>
               <widget class="QLabel" name="label_69">
                <property name="font">
                 <font>
-                 <family>Noto Sans CJK HK</family>
+                 <family>Noto Sans CJK KR</family>
                  <pointsize>12</pointsize>
                 </font>
                </property>
@@ -2302,7 +2327,7 @@ Gripper Off</string>
               <widget class="QLabel" name="label_68">
                <property name="font">
                 <font>
-                 <family>Noto Sans CJK HK</family>
+                 <family>Noto Sans CJK KR</family>
                  <pointsize>12</pointsize>
                 </font>
                </property>
@@ -2318,7 +2343,7 @@ Gripper Off</string>
               <widget class="QLabel" name="label_67">
                <property name="font">
                 <font>
-                 <family>Noto Sans CJK HK</family>
+                 <family>Noto Sans CJK KR</family>
                  <pointsize>12</pointsize>
                 </font>
                </property>
@@ -2334,7 +2359,7 @@ Gripper Off</string>
               <widget class="QLabel" name="label_66">
                <property name="font">
                 <font>
-                 <family>Noto Sans CJK HK</family>
+                 <family>Noto Sans CJK KR</family>
                  <pointsize>12</pointsize>
                 </font>
                </property>
@@ -2350,7 +2375,7 @@ Gripper Off</string>
               <widget class="QLabel" name="label_65">
                <property name="font">
                 <font>
-                 <family>Noto Sans CJK HK</family>
+                 <family>Noto Sans CJK KR</family>
                  <pointsize>12</pointsize>
                 </font>
                </property>
@@ -2589,7 +2614,7 @@ Gripper Off</string>
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans CJK HK</family>
+               <family>Noto Sans CJK KR</family>
                <pointsize>14</pointsize>
               </font>
              </property>
@@ -2605,7 +2630,7 @@ Gripper Off</string>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_finger_pos">
              <property name="font">
               <font>
-               <family>Noto Sans CJK HK</family>
+               <family>Noto Sans CJK KR</family>
                <pointsize>14</pointsize>
               </font>
              </property>
@@ -2625,6 +2650,11 @@ Gripper Off</string>
            </item>
            <item>
             <spacer name="horizontalSpacer_3">
+             <property name="font">
+              <font>
+               <family>Noto Sans CJK KR</family>
+              </font>
+             </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -2648,6 +2678,11 @@ Gripper Off</string>
            <height>10</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>Noto Sans CJK KR</family>
+          </font>
+         </property>
          <property name="lineWidth">
           <number>1</number>
          </property>
@@ -2667,7 +2702,7 @@ Gripper Off</string>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_torque">
              <property name="font">
               <font>
-               <family>Noto Sans CJK HK</family>
+               <family>Noto Sans CJK KR</family>
                <pointsize>14</pointsize>
               </font>
              </property>
@@ -2695,7 +2730,7 @@ Gripper Off</string>
             <widget class="QLabel" name="label_51">
              <property name="font">
               <font>
-               <family>Noto Sans CJK HK</family>
+               <family>Noto Sans CJK KR</family>
                <pointsize>16</pointsize>
                <weight>75</weight>
                <bold>true</bold>
@@ -2924,7 +2959,7 @@ Gripper Off</string>
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans CJK HK</family>
+               <family>Noto Sans CJK KR</family>
                <pointsize>14</pointsize>
               </font>
              </property>
@@ -2938,6 +2973,11 @@ Gripper Off</string>
            </item>
            <item row="1" column="1">
             <spacer name="verticalSpacer_5">
+             <property name="font">
+              <font>
+               <family>Noto Sans CJK KR</family>
+              </font>
+             </property>
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
@@ -2955,6 +2995,11 @@ Gripper Off</string>
               <layout class="QVBoxLayout" name="verticalLayout_2">
                <item>
                 <spacer name="verticalSpacer">
+                 <property name="font">
+                  <font>
+                   <family>Noto Sans CJK KR</family>
+                  </font>
+                 </property>
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
                  </property>
@@ -2971,6 +3016,11 @@ Gripper Off</string>
                </item>
                <item>
                 <widget class="QSlider" name="verticalSlider_torque">
+                 <property name="font">
+                  <font>
+                   <family>Noto Sans CJK KR</family>
+                  </font>
+                 </property>
                  <property name="minimum">
                   <number>50</number>
                  </property>
@@ -2993,6 +3043,11 @@ Gripper Off</string>
                </item>
                <item>
                 <spacer name="verticalSpacer_2">
+                 <property name="font">
+                  <font>
+                   <family>Noto Sans CJK KR</family>
+                  </font>
+                 </property>
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
                  </property>
@@ -3015,7 +3070,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_58">
                  <property name="font">
                   <font>
-                   <family>Noto Sans CJK HK</family>
+                   <family>Noto Sans CJK KR</family>
                    <pointsize>12</pointsize>
                   </font>
                  </property>
@@ -3031,7 +3086,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_57">
                  <property name="font">
                   <font>
-                   <family>Noto Sans CJK HK</family>
+                   <family>Noto Sans CJK KR</family>
                    <pointsize>12</pointsize>
                   </font>
                  </property>
@@ -3047,7 +3102,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_56">
                  <property name="font">
                   <font>
-                   <family>Noto Sans CJK HK</family>
+                   <family>Noto Sans CJK KR</family>
                    <pointsize>12</pointsize>
                   </font>
                  </property>
@@ -3063,7 +3118,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_55">
                  <property name="font">
                   <font>
-                   <family>Noto Sans CJK HK</family>
+                   <family>Noto Sans CJK KR</family>
                    <pointsize>12</pointsize>
                   </font>
                  </property>
@@ -3079,7 +3134,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_54">
                  <property name="font">
                   <font>
-                   <family>Noto Sans CJK HK</family>
+                   <family>Noto Sans CJK KR</family>
                    <pointsize>12</pointsize>
                   </font>
                  </property>
@@ -3095,7 +3150,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_53">
                  <property name="font">
                   <font>
-                   <family>Noto Sans CJK HK</family>
+                   <family>Noto Sans CJK KR</family>
                    <pointsize>12</pointsize>
                   </font>
                  </property>
@@ -3121,6 +3176,11 @@ Gripper Off</string>
              <height>0</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Noto Sans CJK KR</family>
+            </font>
+           </property>
            <property name="lineWidth">
             <number>1</number>
            </property>
@@ -3138,7 +3198,7 @@ Gripper Off</string>
             <widget class="QLabel" name="label_52">
              <property name="font">
               <font>
-               <family>Noto Sans CJK HK</family>
+               <family>Noto Sans CJK KR</family>
                <pointsize>16</pointsize>
                <weight>75</weight>
                <bold>true</bold>
@@ -3367,7 +3427,7 @@ Gripper Off</string>
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans CJK HK</family>
+               <family>Noto Sans CJK KR</family>
                <pointsize>14</pointsize>
               </font>
              </property>
@@ -3385,6 +3445,11 @@ Gripper Off</string>
               <layout class="QVBoxLayout" name="verticalLayout_3">
                <item>
                 <spacer name="verticalSpacer_3">
+                 <property name="font">
+                  <font>
+                   <family>Noto Sans CJK KR</family>
+                  </font>
+                 </property>
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
                  </property>
@@ -3401,6 +3466,11 @@ Gripper Off</string>
                </item>
                <item>
                 <widget class="QSlider" name="verticalSlider_speed">
+                 <property name="font">
+                  <font>
+                   <family>Noto Sans CJK KR</family>
+                  </font>
+                 </property>
                  <property name="minimum">
                   <number>0</number>
                  </property>
@@ -3423,6 +3493,11 @@ Gripper Off</string>
                </item>
                <item>
                 <spacer name="verticalSpacer_4">
+                 <property name="font">
+                  <font>
+                   <family>Noto Sans CJK KR</family>
+                  </font>
+                 </property>
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
                  </property>
@@ -3445,7 +3520,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_59">
                  <property name="font">
                   <font>
-                   <family>Noto Sans CJK HK</family>
+                   <family>Noto Sans CJK KR</family>
                    <pointsize>12</pointsize>
                   </font>
                  </property>
@@ -3461,7 +3536,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_60">
                  <property name="font">
                   <font>
-                   <family>Noto Sans CJK HK</family>
+                   <family>Noto Sans CJK KR</family>
                    <pointsize>12</pointsize>
                   </font>
                  </property>
@@ -3477,7 +3552,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_61">
                  <property name="font">
                   <font>
-                   <family>Noto Sans CJK HK</family>
+                   <family>Noto Sans CJK KR</family>
                    <pointsize>12</pointsize>
                   </font>
                  </property>
@@ -3493,7 +3568,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_62">
                  <property name="font">
                   <font>
-                   <family>Noto Sans CJK HK</family>
+                   <family>Noto Sans CJK KR</family>
                    <pointsize>12</pointsize>
                   </font>
                  </property>
@@ -3509,7 +3584,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_63">
                  <property name="font">
                   <font>
-                   <family>Noto Sans CJK HK</family>
+                   <family>Noto Sans CJK KR</family>
                    <pointsize>12</pointsize>
                   </font>
                  </property>
@@ -3525,7 +3600,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_64">
                  <property name="font">
                   <font>
-                   <family>Noto Sans CJK HK</family>
+                   <family>Noto Sans CJK KR</family>
                    <pointsize>12</pointsize>
                   </font>
                  </property>
@@ -3545,7 +3620,7 @@ Gripper Off</string>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_speed">
              <property name="font">
               <font>
-               <family>Noto Sans CJK HK</family>
+               <family>Noto Sans CJK KR</family>
                <pointsize>14</pointsize>
               </font>
              </property>
@@ -3571,6 +3646,11 @@ Gripper Off</string>
            </item>
            <item row="1" column="1">
             <spacer name="verticalSpacer_6">
+             <property name="font">
+              <font>
+               <family>Noto Sans CJK KR</family>
+              </font>
+             </property>
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
