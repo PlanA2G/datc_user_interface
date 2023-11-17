@@ -95,7 +95,7 @@ void TcpSocket::writeHandler() {
                 close();
             }
         }
-        usleep(50000);
+        usleep(1000);
     }
 }
 
@@ -111,7 +111,7 @@ void TcpSocket::readHandler(const boost::system::error_code& err, size_t bytes_t
             message_handler_.pushToWorkerQueue(json);
         }
 
-        usleep(10000);
+        usleep(1000);
 //        socket_.async_read_some(boost::asio::buffer(buffer_, MAX_BUFFER), boost::bind(&TcpSocket::readHandler, this, boost::asio::placeholders::error, boost::asio::placeholders::bytes_transferred));
         socket_.async_read_some(boost::asio::buffer(buffer_, MAX_BUFFER), std::bind(&TcpSocket::readHandler, this, std::placeholders::_1, std::placeholders::_2));
     } else {

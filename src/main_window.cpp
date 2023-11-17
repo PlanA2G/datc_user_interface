@@ -43,8 +43,6 @@ MainWindow::MainWindow(int argc, char **argv, bool &success, QWidget *parent) : 
     btn_active_str_   = "background-color:#FFFFFF;color:#888888;border-style:outset;border-width:7;";
     btn_inactive_str_ = "background-color:#BBBBBB;color:#888888;border-style:inset;border-width:7;";
 
-    modbus_widget_->ui_.comboBox_baudrate->lineEdit()->setAlignment(Qt::AlignCenter);
-
     // Initial value setting
     int finger_pos_init_value = 50;
     int torque_init_value = 100;
@@ -66,6 +64,7 @@ MainWindow::MainWindow(int argc, char **argv, bool &success, QWidget *parent) : 
     QObject::connect(datc_ctrl_widget_->ui_.pushButton_cmd_initialize    , SIGNAL(clicked()), this, SLOT(datcInit()));
     QObject::connect(datc_ctrl_widget_->ui_.pushButton_cmd_grp_open      , SIGNAL(clicked()), this, SLOT(datcOpen()));
     QObject::connect(datc_ctrl_widget_->ui_.pushButton_cmd_grp_close     , SIGNAL(clicked()), this, SLOT(datcClose()));
+    QObject::connect(datc_ctrl_widget_->ui_.pushButton_cmd_grp_stop      , SIGNAL(clicked()), this, SLOT(datcStop()));
     QObject::connect(datc_ctrl_widget_->ui_.pushButton_cmd_grp_vacuum_on , SIGNAL(clicked()), this, SLOT(datcVacuumGrpOn()));
     QObject::connect(datc_ctrl_widget_->ui_.pushButton_cmd_grp_vacuum_off, SIGNAL(clicked()), this, SLOT(datcVacuumGrpOff()));
 
@@ -121,7 +120,6 @@ void MainWindow::timerCallback() {
     // Display
     ui_->lineEdit_monitor_finger_position-> setText(QString::number((double) datc_status.finger_pos / 100 , 'f', 1) + " %");
     ui_->lineEdit_monitor_current        -> setText(QString::number(datc_status.motor_cur, 'd', 0) + " mA");
-    ui_->lineEdit_monitor_mode           -> setText(" " + QString::fromStdString(datc_status.status_str));
 
     // Comm. status check
     const bool is_modbus_connected = datc_interface_->getConnectionState();
@@ -137,9 +135,13 @@ void MainWindow::timerCallback() {
     setButtonStyle(modbus_widget_->ui_.pushButton_modbus_slave_change);
 
     if (is_modbus_connected) {
-
+        if (datc_interface_->getModbusRecvErr()) {
+            ui_->lineEdit_monitor_mode->setText("Failed to read input register.");
+        } else {
+            ui_->lineEdit_monitor_mode->setText(" " + QString::fromStdString(datc_status.status_str));
+        }
     } else {
-
+        ui_->lineEdit_current_slave_addr->setText("N/A");
     }
 
 #ifndef RCLCPP__RCLCPP_HPP_
@@ -216,6 +218,10 @@ void MainWindow::datcClose() {
     datc_interface_->grpClose();
 }
 
+void MainWindow::datcStop() {
+    datc_interface_->motorStop();
+}
+
 void MainWindow::datcVacuumGrpOn() {
     datc_interface_->vacuumGrpOn();
 }
@@ -243,18 +249,26 @@ void MainWindow::initModbus() {
     uint16_t slave_addr = modbus_widget_->ui_.spinBox_slave_addr->value();
 
     if (datc_interface_->init(port, slave_addr)) {
-
+        ui_->lineEdit_current_slave_addr->setText(QString::fromStdString(std::to_string(slave_addr)));
     } else {
+        ui_->lineEdit_monitor_mode->setText("Invalid port or permission.");
         COUT("[ERROR] Port name or slave address invlaid !");
     }
 }
 
 void MainWindow::releaseModbus() {
     datc_interface_->modbusRelease();
+    ui_->lineEdit_monitor_mode->setText("");
 }
 
 void MainWindow::changeSlaveAddress() {
+    uint16_t slave_addr = modbus_widget_->ui_.spinBox_slave_addr->value();
 
+    if (datc_interface_->modbusSlaveChange(slave_addr)) {
+        ui_->lineEdit_current_slave_addr->setText(QString::fromStdString(std::to_string(slave_addr)));
+    } else {
+        COUT("[ERROR] Slave change failed !");
+    }
 }
 
 void MainWindow::setSlaveAddr() {

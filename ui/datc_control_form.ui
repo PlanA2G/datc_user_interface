@@ -129,10 +129,10 @@ QSlider::sub-page:horizontal {
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="leftMargin">
-    <number>10</number>
+    <number>15</number>
    </property>
    <property name="topMargin">
-    <number>10</number>
+    <number>15</number>
    </property>
    <item row="0" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -342,7 +342,7 @@ QSlider::sub-page:horizontal {
          <property name="font">
           <font>
            <family>Noto Sans CJK HK</family>
-           <pointsize>16</pointsize>
+           <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -802,7 +802,7 @@ QSlider::sub-page:horizontal {
          <property name="font">
           <font>
            <family>Noto Sans CJK HK</family>
-           <pointsize>16</pointsize>
+           <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -1020,7 +1020,7 @@ Enable</string>
          <property name="font">
           <font>
            <family>Noto Sans CJK HK</family>
-           <pointsize>16</pointsize>
+           <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -1257,7 +1257,7 @@ Disable</string>
          <property name="font">
           <font>
            <family>Noto Sans CJK HK</family>
-           <pointsize>16</pointsize>
+           <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -1474,7 +1474,7 @@ Disable</string>
          <property name="font">
           <font>
            <family>Noto Sans CJK HK</family>
-           <pointsize>16</pointsize>
+           <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -1692,7 +1692,7 @@ Open</string>
          <property name="font">
           <font>
            <family>Noto Sans CJK HK</family>
-           <pointsize>16</pointsize>
+           <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -1929,7 +1929,7 @@ Close</string>
          <property name="font">
           <font>
            <family>Noto Sans CJK HK</family>
-           <pointsize>16</pointsize>
+           <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -2147,7 +2147,7 @@ Gripper On</string>
          <property name="font">
           <font>
            <family>Noto Sans CJK HK</family>
-           <pointsize>16</pointsize>
+           <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -2197,7 +2197,7 @@ Gripper Off</string>
             </font>
            </property>
            <property name="text">
-            <string>Finger Position Control</string>
+            <string>Finger Position</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2379,13 +2379,13 @@ Gripper Off</string>
              <property name="minimumSize">
               <size>
                <width>85</width>
-               <height>40</height>
+               <height>35</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
                <width>85</width>
-               <height>40</height>
+               <height>35</height>
               </size>
              </property>
              <property name="palette">
@@ -2590,7 +2590,7 @@ Gripper Off</string>
              <property name="font">
               <font>
                <family>Noto Sans CJK HK</family>
-               <pointsize>16</pointsize>
+               <pointsize>14</pointsize>
               </font>
              </property>
              <property name="text">
@@ -2925,7 +2925,7 @@ Gripper Off</string>
              <property name="font">
               <font>
                <family>Noto Sans CJK HK</family>
-               <pointsize>16</pointsize>
+               <pointsize>14</pointsize>
               </font>
              </property>
              <property name="text">
@@ -3368,7 +3368,7 @@ Gripper Off</string>
              <property name="font">
               <font>
                <family>Noto Sans CJK HK</family>
-               <pointsize>16</pointsize>
+               <pointsize>14</pointsize>
               </font>
              </property>
              <property name="text">
@@ -3597,7 +3597,7 @@ Gripper Off</string>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>300</width>
+       <width>296</width>
        <height>18</height>
       </size>
      </property>
@@ -3611,7 +3611,7 @@ Gripper Off</string>
      <property name="sizeHint" stdset="0">
       <size>
        <width>658</width>
-       <height>144</height>
+       <height>145</height>
       </size>
      </property>
     </spacer>

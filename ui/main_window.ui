@@ -572,6 +572,9 @@ QLineEdit{
                <bold>true</bold>
               </font>
              </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
              <property name="readOnly">
               <bool>true</bool>
              </property>
