@@ -77,6 +77,7 @@ public:
         unique_lock<mutex> lg(mutex_comm_);
 
         modbus_close(mb_);
+        modbus_free (mb_);
         COUT("Modbus released");
     }
 
@@ -93,13 +94,13 @@ public:
             return false;
         }
 
-        if (modbus_connect(mb_) == -1) {
-            fprintf(stderr, "Unable to connect %s\n", modbus_strerror(errno));
-            modbus_close(mb_);
-            modbus_free (mb_);
-            connection_state_ = false;
-            return false;
-        }
+//        if (modbus_connect(mb_) == -1) {
+//            fprintf(stderr, "Unable to connect %s\n", modbus_strerror(errno));
+//            modbus_close(mb_);
+//            modbus_free (mb_);
+//            connection_state_ = false;
+//            return false;
+//        }
 
         usleep(10000);
         printf("Modbus slave address changed to %d\n", slave_address);

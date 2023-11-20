@@ -56,6 +56,21 @@ MainWindow::MainWindow(int argc, char **argv, bool &success, QWidget *parent) : 
     datc_ctrl_widget_->ui_.doubleSpinBox_torque->setValue    ((double) torque_init_value);
     datc_ctrl_widget_->ui_.doubleSpinBox_speed->setValue     ((double) speed_init_value);
 
+    // Combo box setting
+    modbus_widget_->ui_.comboBox_serial_port->setEnabled(true);
+    modbus_widget_->ui_.comboBox_serial_port->lineEdit()->setAlignment(Qt::AlignCenter);
+    auto font = modbus_widget_->ui_.comboBox_serial_port->lineEdit()->font();
+    font.setPointSize(14);
+    font.setBold(true);
+    modbus_widget_->ui_.comboBox_serial_port->lineEdit()->setFont(font);
+
+    on_pushButton_modbus_refresh_clicked();
+
+    modbus_widget_->ui_.comboBox_baudrate->setEnabled(true);
+    modbus_widget_->ui_.comboBox_baudrate->addItems({"9600", "19200", "38400", "57600", "115200"});
+    modbus_widget_->ui_.comboBox_baudrate->setCurrentIndex(2);
+    modbus_widget_->ui_.comboBox_baudrate->setDisabled(true);
+
     // DATC control related btn
     QObject::connect(datc_ctrl_widget_->ui_.pushButton_cmd_enable  , SIGNAL(clicked()), this, SLOT(datcEnable()));
     QObject::connect(datc_ctrl_widget_->ui_.pushButton_cmd_disable , SIGNAL(clicked()), this, SLOT(datcDisable()));
@@ -83,12 +98,6 @@ MainWindow::MainWindow(int argc, char **argv, bool &success, QWidget *parent) : 
     QObject::connect(tcp_widget_->ui_.pushButton_tcp_stop , SIGNAL(clicked()), this, SLOT(stopTcpComm()));
 #else
     ui_->pushButton_select_tcp->setHidden(true);
-#endif
-
-#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__)
-    modbus_widget_->ui_.lineEdit_serial_port->setText("COM4");
-#else
-    modbus_widget_->ui_.lineEdit_serial_port->setText("/dev/ttyUSB0");
 #endif
 
     timer_ = new QTimer(this);
@@ -241,11 +250,11 @@ void MainWindow::datcSetSpeed() {
 // Modbus RTU related
 void MainWindow::initModbus() {
     COUT("--------------------------------------------");
-    COUT("[INFO] Port: " + modbus_widget_->ui_.lineEdit_serial_port->text().toStdString());
+    COUT("[INFO] Port: " + modbus_widget_->ui_.comboBox_serial_port->currentText().toStdString());
     COUT("[INFO] Slave address #" + modbus_widget_->ui_.spinBox_slave_addr->text().toStdString());
     COUT("--------------------------------------------");
 
-    const char* port = modbus_widget_->ui_.lineEdit_serial_port->text().toStdString().c_str();
+    const char* port = modbus_widget_->ui_.comboBox_serial_port->currentText().toStdString().c_str();
     uint16_t slave_addr = modbus_widget_->ui_.spinBox_slave_addr->value();
 
     if (datc_interface_->init(port, slave_addr)) {
@@ -314,6 +323,70 @@ void MainWindow::on_pushButton_select_tcp_clicked() {
     ui_->pushButton_select_datc_ctrl->setStyleSheet(menu_btn_inactive_str_);
     ui_->pushButton_select_adv      ->setStyleSheet(menu_btn_inactive_str_);
     ui_->pushButton_select_tcp      ->setStyleSheet(menu_btn_active_str_);
+}
+
+void MainWindow::on_pushButton_modbus_refresh_clicked() {
+    modbus_widget_->ui_.comboBox_serial_port->clear();
+
+    std::vector<std::string> ser_port_str_vec = getSerialPortLists();
+
+    for (auto i : ser_port_str_vec) {
+        modbus_widget_->ui_.comboBox_serial_port->addItem(QString::fromStdString(i));
+    }
+
+    if (!ser_port_str_vec.empty()) {
+        modbus_widget_->ui_.comboBox_serial_port->setCurrentIndex(ser_port_str_vec.size() - 1);
+    }
+}
+
+std::vector<std::string> MainWindow::getSerialPortLists() {
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__)
+    std::vector<std::string> comPorts;
+
+    // Define the GUID for the ports
+    GUID guid = { 0x4d36e978, 0xe325, 0x11ce, { 0xbf, 0xc1, 0x08, 0x00, 0x2b, 0xe1, 0x03, 0x18 } };
+
+    // Get a handle to a device information set for all devices matching the specified class
+    HDEVINFO deviceInfoSet = SetupDiGetClassDevs(&guid, 0, 0, DIGCF_PRESENT);
+
+    if (deviceInfoSet == INVALID_HANDLE_VALUE) {
+        std::cerr << "Error: SetupDiGetClassDevs failed." << std::endl;
+        return comPorts;
+    }
+
+    // Enumerate through all devices in the device information set
+    SP_DEVINFO_DATA deviceInfoData;
+    deviceInfoData.cbSize = sizeof(SP_DEVINFO_DATA);
+    for (DWORD i = 0; SetupDiEnumDeviceInfo(deviceInfoSet, i, &deviceInfoData); ++i) {
+        // Get the registry key name for the device
+        HKEY hkey = SetupDiOpenDevRegKey(deviceInfoSet, &deviceInfoData, DICS_FLAG_GLOBAL, 0, DIREG_DEV, KEY_READ);
+        if (hkey == INVALID_HANDLE_VALUE) {
+            continue;
+        }
+
+        // Get the length of the registry key name
+        DWORD size = 0;
+        RegQueryValueExA(hkey, "PortName", 0, 0, 0, &size);
+
+        // Get the registry key name
+        char* name = new char[size];
+        RegQueryValueExA(hkey, "PortName", 0, 0, (LPBYTE)name, &size);
+        comPorts.push_back(name);
+
+        // Clean up
+        delete[] name;
+        RegCloseKey(hkey);
+    }
+
+    // Clean up
+    SetupDiDestroyDeviceInfoList(deviceInfoSet);
+
+    return comPorts;
+#else
+
+#endif
+
+
 }
 
 } // end of namespace

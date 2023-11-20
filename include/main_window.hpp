@@ -23,6 +23,13 @@
 #include "ui_main_window.h"
 #include "custom_widget.hpp"
 
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(WIN64) || defined(_WIN64) || defined(__WIN64__)
+#include <windows.h>
+#include <setupapi.h>
+#else
+
+#endif
+
 using namespace std;
 
 namespace gripper_ui {
@@ -76,6 +83,10 @@ public Q_SLOTS:
     void on_pushButton_select_modbus_clicked();
     void on_pushButton_select_datc_ctrl_clicked();
     void on_pushButton_select_tcp_clicked();
+    void on_pushButton_modbus_refresh_clicked();
+
+    // Serial port find function
+    std::vector<std::string> getSerialPortLists();
 
 private:
     Ui::MainWindow *ui_;
