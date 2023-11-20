@@ -343,7 +343,7 @@ QSlider::sub-page:horizontal {
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <bold>false</bold>
+           <bold>true</bold>
           </font>
          </property>
          <property name="text">
@@ -802,7 +802,7 @@ QSlider::sub-page:horizontal {
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <bold>false</bold>
+           <bold>true</bold>
           </font>
          </property>
          <property name="text">
@@ -1019,7 +1019,7 @@ Enable</string>
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <bold>false</bold>
+           <bold>true</bold>
           </font>
          </property>
          <property name="text">
@@ -1261,7 +1261,7 @@ Disable</string>
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <bold>false</bold>
+           <bold>true</bold>
           </font>
          </property>
          <property name="text">
@@ -1477,7 +1477,7 @@ Disable</string>
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <bold>false</bold>
+           <bold>true</bold>
           </font>
          </property>
          <property name="text">
@@ -1694,7 +1694,7 @@ Open</string>
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <bold>false</bold>
+           <bold>true</bold>
           </font>
          </property>
          <property name="text">
@@ -1936,7 +1936,7 @@ Close</string>
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <bold>false</bold>
+           <bold>true</bold>
           </font>
          </property>
          <property name="text">
@@ -2153,7 +2153,7 @@ Gripper On</string>
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <bold>false</bold>
+           <bold>true</bold>
           </font>
          </property>
          <property name="text">

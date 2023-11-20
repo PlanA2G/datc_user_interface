@@ -19,7 +19,7 @@
 }
 
 #comboBox_baudrate {
-	padding-left: 65px;
+	padding-left: 62px;
 	border-radius:5px;
 }
 
@@ -89,7 +89,6 @@
         <font>
          <family>Noto Sans KR Medium</family>
          <pointsize>16</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -328,7 +327,7 @@
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -393,7 +392,7 @@
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -458,7 +457,7 @@
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -472,7 +471,6 @@
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -542,7 +540,7 @@
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -607,7 +605,7 @@
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -672,7 +670,7 @@
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -686,7 +684,6 @@
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -774,7 +771,7 @@
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -839,7 +836,7 @@
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -904,7 +901,7 @@
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -918,7 +915,6 @@
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -1058,7 +1054,7 @@
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -1123,7 +1119,7 @@
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -1188,7 +1184,7 @@
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>255</red>
                <green>255</green>
                <blue>255</blue>
@@ -1202,7 +1198,6 @@
           <font>
            <family>Noto Sans KR Medium</family>
            <pointsize>14</pointsize>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>

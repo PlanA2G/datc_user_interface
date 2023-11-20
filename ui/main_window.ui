@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>914</width>
-    <height>526</height>
+    <height>468</height>
    </rect>
   </property>
   <property name="font">
@@ -16,7 +16,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>DATC Control Interface</string>
   </property>
   <property name="styleSheet">
    <string notr="true">#centralwidget{
