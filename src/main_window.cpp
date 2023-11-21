@@ -383,10 +383,32 @@ std::vector<std::string> MainWindow::getSerialPortLists() {
 
     return comPorts;
 #else
+    std::vector<std::string> serialPorts;
 
+    // Open the /dev directory
+    DIR *dir = opendir("/dev");
+
+    if (!dir) {
+        std::cerr << "Error opening /dev directory." << std::endl;
+        return serialPorts;
+    }
+
+    // Read the contents of the directory
+    struct dirent *entry;
+
+    while ((entry = readdir(dir)) != nullptr) {
+        // Check if the entry is a character device file and has "tty" in its name
+        if (entry->d_type == DT_CHR && std::strstr(entry->d_name, "ttyUSB") != nullptr) {
+            std::string portName = "/dev/" + std::string(entry->d_name);
+            serialPorts.push_back(portName);
+        }
+    }
+
+    // Close the directory
+    closedir(dir);
+
+    return serialPorts;
 #endif
-
-
 }
 
 } // end of namespace

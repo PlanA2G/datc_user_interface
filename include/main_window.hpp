@@ -27,7 +27,9 @@
 #include <windows.h>
 #include <setupapi.h>
 #else
-
+#include <fstream>
+#include <dirent.h>
+#include <cstring>
 #endif
 
 using namespace std;
