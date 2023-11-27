@@ -127,7 +127,7 @@ void MainWindow::timerCallback() {
     DatcStatus datc_status = datc_interface_->getDatcStatus();
 
     // Display
-    ui_->lineEdit_monitor_finger_position-> setText(QString::number((double) datc_status.finger_pos / 100 , 'f', 1) + " %");
+    ui_->lineEdit_monitor_finger_position-> setText(QString::number((double) datc_status.finger_pos / 10 , 'f', 1) + " %");
     ui_->lineEdit_monitor_current        -> setText(QString::number(datc_status.motor_cur, 'd', 0) + " mA");
 
     // Comm. status check
@@ -212,7 +212,7 @@ void MainWindow::datcDisable() {
 
 // Datc control
 void MainWindow::datcFingerPosCtrl() {
-    datc_interface_->setFingerPos(datc_ctrl_widget_->ui_.doubleSpinBox_finger_pos->value() * 100);
+    datc_interface_->setFingerPos(datc_ctrl_widget_->ui_.doubleSpinBox_finger_pos->value() * 10);
 }
 
 void MainWindow::datcInit() {
