@@ -89,9 +89,10 @@ void DatcCommInterface::recvCommand() {
         }
     };
 
-    string cmd_str     = "command";
-    string value_1_str = "value_1";
-    string value_2_str = "value_2";
+    const string cmd_change_slave = "change_slave";
+    const string cmd_str          = "command";
+    const string value_1_str      = "value_1";
+    const string value_2_str      = "value_2";
 
     Json::Value json;
 
@@ -101,7 +102,10 @@ void DatcCommInterface::recvCommand() {
         if (MessageManager<Json::Value>::getInstance().tryPopFromWokerQueue(json)) {
             mutex_tcp_.unlock();
 
-            if (!json.isMember(cmd_str)) {
+            if (json.isMember(cmd_change_slave)) {
+                modbusSlaveChange(json[cmd_change_slave].asUInt());
+                continue;
+            } else if (!json.isMember(cmd_str)) {
                 continue;
             }
 

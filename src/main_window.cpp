@@ -149,6 +149,11 @@ void MainWindow::timerCallback() {
         } else {
             ui_->lineEdit_monitor_mode->setText(" " + QString::fromStdString(datc_status.status_str));
         }
+
+        QString qstr_slave_addr = (datc_interface_->getSlaveAddr() == 0) ?
+                                  "N/A" : QString::number(datc_interface_->getSlaveAddr());
+
+        ui_->lineEdit_current_slave_addr->setText(qstr_slave_addr);
     } else {
         ui_->lineEdit_current_slave_addr->setText("N/A");
     }
@@ -258,7 +263,7 @@ void MainWindow::initModbus() {
     uint16_t slave_addr = modbus_widget_->ui_.spinBox_slave_addr->value();
 
     if (datc_interface_->init(port, slave_addr)) {
-        ui_->lineEdit_current_slave_addr->setText(QString::fromStdString(std::to_string(slave_addr)));
+        // Successed
     } else {
         ui_->lineEdit_monitor_mode->setText("Invalid port or permission.");
         COUT("[ERROR] Port name or slave address invlaid !");
@@ -274,14 +279,20 @@ void MainWindow::changeSlaveAddress() {
     uint16_t slave_addr = modbus_widget_->ui_.spinBox_slave_addr->value();
 
     if (datc_interface_->modbusSlaveChange(slave_addr)) {
-        ui_->lineEdit_current_slave_addr->setText(QString::fromStdString(std::to_string(slave_addr)));
+        // Successed
     } else {
         COUT("[ERROR] Slave change failed !");
     }
 }
 
 void MainWindow::setSlaveAddr() {
+    uint16_t slave_addr = modbus_widget_->ui_.spinBox_slave_addr_4set->value();
 
+    if (datc_interface_->setModbusAddr(slave_addr)) {
+        // Successed
+    } else {
+        COUT("[ERROR] Slave change failed !");
+    }
 }
 
 #ifndef RCLCPP__RCLCPP_HPP_

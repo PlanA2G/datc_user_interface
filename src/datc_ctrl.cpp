@@ -59,6 +59,10 @@ bool DatcCtrl::motorCurCtrl(int16_t current, uint16_t duration) {
 
 bool DatcCtrl::setModbusAddr(uint16_t slave_addr) {
     // TODO: modbus addr 범위 지정 필요
+    if (slave_addr < 1 || slave_addr >= 100) {
+        COUT("\"setModbusAddr\" function error. Check the input slave address.");
+        return false;
+    }
 
     return command(DATC_COMMAND::CHANGE_MODBUS_ADDRESS, slave_addr);
 }

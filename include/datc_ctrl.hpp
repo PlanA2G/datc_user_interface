@@ -104,6 +104,8 @@ public:
     bool getConnectionState() {return mbc_.getConnectionState();}
     bool getModbusRecvErr() {return flag_modbus_recv_err_;}
 
+    uint16_t getSlaveAddr() {return mbc_.getSlaveAddr();}
+
 protected:
     bool checkDurationRange(string error_prefix, uint16_t &duration);
     bool command(DATC_COMMAND cmd, uint16_t value_1 = 0, uint16_t value_2 = 0);
