@@ -123,25 +123,23 @@ void DatcCommInterface::recvCommand() {
                     break;
 
                 case DATC_COMMAND::MOTOR_POSITION_CONTROL:
-                    checkValueFn(json, value_1_str);
-                    checkValueFn(json, value_2_str);
+                    if (!checkValueFn(json, value_1_str)) break;
+                    if (!checkValueFn(json, value_2_str)) break;
                     motorPosCtrl(json[value_1_str].asInt(), json[value_2_str].asUInt());
                     break;
 
                 case DATC_COMMAND::MOTOR_VELOCITY_CONTROL:
-                    checkValueFn(json, value_1_str);
-                    checkValueFn(json, value_2_str);
-                    motorVelCtrl(json[value_1_str].asInt(), json[value_2_str].asUInt());
+                    if (!checkValueFn(json, value_1_str)) break;
+                    motorVelCtrl(json[value_1_str].asInt());
                     break;
 
                 case DATC_COMMAND::MOTOR_CURRENT_CONTROL:
-                    checkValueFn(json, value_1_str);
-                    checkValueFn(json, value_2_str);
-                    motorCurCtrl(json[value_1_str].asInt(), json[value_2_str].asUInt());
+                    if (!checkValueFn(json, value_1_str)) break;
+                    motorCurCtrl(json[value_1_str].asInt());
                     break;
 
                 case DATC_COMMAND::CHANGE_MODBUS_ADDRESS:
-                    checkValueFn(json, value_1_str);
+                    if (!checkValueFn(json, value_1_str)) break;
                     setModbusAddr(json[value_1_str].asUInt());
                     break;
 
@@ -158,7 +156,7 @@ void DatcCommInterface::recvCommand() {
                     break;
 
                 case DATC_COMMAND::SET_FINGER_POSITION:
-                    checkValueFn(json, value_1_str);
+                    if (!checkValueFn(json, value_1_str)) break;
                     setFingerPos(json[value_1_str].asUInt());
                     break;
 
@@ -171,12 +169,12 @@ void DatcCommInterface::recvCommand() {
                     break;
 
                 case DATC_COMMAND::SET_MOTOR_TORQUE:
-                    checkValueFn(json, value_1_str);
+                    if (!checkValueFn(json, value_1_str)) break;
                     setMotorTorque(json[value_1_str].asUInt());
                     break;
 
                 case DATC_COMMAND::SET_MOTOR_SPEED:
-                    checkValueFn(json, value_1_str);
+                    if (!checkValueFn(json, value_1_str)) break;
                     setMotorSpeed(json[value_1_str].asUInt());
                     break;
 

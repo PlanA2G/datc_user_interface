@@ -17,9 +17,10 @@ namespace gripper_ui {
 MainWindow::MainWindow(int argc, char **argv, bool &success, QWidget *parent) : QMainWindow(parent) {
     ui_ = new Ui::MainWindow();
 
-    modbus_widget_    = new ModbusWidget(this);
-    datc_ctrl_widget_ = new DatcCtrlWidget(this);
-    tcp_widget_       = new TcpWidget(this);
+    modbus_widget_        = new ModbusWidget(this);
+    datc_ctrl_widget_     = new DatcCtrlWidget(this);
+    tcp_widget_           = new TcpWidget(this);
+    advanced_ctrl_widget_ = new AdvancedCtrlWidget(this);
 
     ui_->setupUi(this);
 
@@ -29,6 +30,7 @@ MainWindow::MainWindow(int argc, char **argv, bool &success, QWidget *parent) : 
     // Stacked widget
     ui_->stackedWidget->addWidget(modbus_widget_);
     ui_->stackedWidget->addWidget(datc_ctrl_widget_);
+    ui_->stackedWidget->addWidget(advanced_ctrl_widget_);
 
 #ifndef RCLCPP__RCLCPP_HPP_
     ui_->stackedWidget->addWidget(tcp_widget_);
@@ -85,6 +87,20 @@ MainWindow::MainWindow(int argc, char **argv, bool &success, QWidget *parent) : 
 
     QObject::connect(datc_ctrl_widget_->ui_.pushButton_set_torque, SIGNAL(clicked()), this, SLOT(datcSetTorque()));
     QObject::connect(datc_ctrl_widget_->ui_.pushButton_set_speed , SIGNAL(clicked()), this, SLOT(datcSetSpeed()));
+
+    // Advanced control related btn
+    QObject::connect(advanced_ctrl_widget_->ui_.pushButton_cmd_enable  , SIGNAL(clicked()), this, SLOT(datcEnable()));
+    QObject::connect(advanced_ctrl_widget_->ui_.pushButton_cmd_disable , SIGNAL(clicked()), this, SLOT(datcDisable()));
+
+    QObject::connect(advanced_ctrl_widget_->ui_.pushButton_cmd_initialize    , SIGNAL(clicked()), this, SLOT(datcInit()));
+    QObject::connect(advanced_ctrl_widget_->ui_.pushButton_cmd_grp_open      , SIGNAL(clicked()), this, SLOT(datcOpen()));
+    QObject::connect(advanced_ctrl_widget_->ui_.pushButton_cmd_grp_close     , SIGNAL(clicked()), this, SLOT(datcClose()));
+    QObject::connect(advanced_ctrl_widget_->ui_.pushButton_cmd_grp_stop      , SIGNAL(clicked()), this, SLOT(datcStop()));
+    QObject::connect(advanced_ctrl_widget_->ui_.pushButton_cmd_grp_vacuum_on , SIGNAL(clicked()), this, SLOT(datcVacuumGrpOn()));
+    QObject::connect(advanced_ctrl_widget_->ui_.pushButton_cmd_grp_vacuum_off, SIGNAL(clicked()), this, SLOT(datcVacuumGrpOff()));
+
+    QObject::connect(advanced_ctrl_widget_->ui_.pushButton_set_motor_speed  , SIGNAL(clicked()), this, SLOT(datcMotorVelCtrl()));
+    QObject::connect(advanced_ctrl_widget_->ui_.pushButton_set_motor_current, SIGNAL(clicked()), this, SLOT(datcMotorCurCtrl()));
 
     // Modbus RTU related btn
     QObject::connect(modbus_widget_->ui_.pushButton_modbus_start, SIGNAL(clicked()), this, SLOT(initModbus()));
@@ -187,6 +203,7 @@ void MainWindow::timerCallback() {
         spinbox_data_prev = spinbox->value();
     });
 
+    // Finger position control side
     static int slider_finger_pos_prev = datc_ctrl_widget_->ui_.horizontalSlider_finger_pos->value();
     static int slider_torque_prev     = datc_ctrl_widget_->ui_.verticalSlider_torque->value();
     static int slider_speed_prev      = datc_ctrl_widget_->ui_.verticalSlider_speed ->value();
@@ -204,6 +221,26 @@ void MainWindow::timerCallback() {
     syncSliderSpinboxFn(slider_speed_prev, speed_prev,
                         datc_ctrl_widget_->ui_.verticalSlider_speed,
                         datc_ctrl_widget_->ui_.doubleSpinBox_speed);
+
+    // Advanced control side
+    const int vel_min_percent = (int) ((double) kVelMin / (double) kVelMax * 100);
+
+    if (advanced_ctrl_widget_->ui_.horizontalSlider_motor_speed->value() < vel_min_percent) {
+        advanced_ctrl_widget_->ui_.horizontalSlider_motor_speed->setValue(vel_min_percent);
+    }
+
+    static int slider_vel_prev = advanced_ctrl_widget_->ui_.horizontalSlider_motor_speed->value();
+    static int slider_cur_prev = advanced_ctrl_widget_->ui_.horizontalSlider_motor_current->value();
+
+    static double vel_prev = advanced_ctrl_widget_->ui_.doubleSpinBox_motor_speed->value();
+    static double cur_prev = advanced_ctrl_widget_->ui_.doubleSpinBox_motor_current->value();
+
+    syncSliderSpinboxFn(slider_vel_prev, vel_prev,
+                        advanced_ctrl_widget_->ui_.horizontalSlider_motor_speed,
+                        advanced_ctrl_widget_->ui_.doubleSpinBox_motor_speed);
+    syncSliderSpinboxFn(slider_cur_prev, cur_prev,
+                        advanced_ctrl_widget_->ui_.horizontalSlider_motor_current,
+                        advanced_ctrl_widget_->ui_.doubleSpinBox_motor_current);
 }
 
 // Enable Disable
@@ -218,6 +255,18 @@ void MainWindow::datcDisable() {
 // Datc control
 void MainWindow::datcFingerPosCtrl() {
     datc_interface_->setFingerPos(datc_ctrl_widget_->ui_.doubleSpinBox_finger_pos->value() * 10);
+}
+
+void MainWindow::datcMotorVelCtrl() {
+    int16_t vel = advanced_ctrl_widget_->ui_.doubleSpinBox_motor_speed->value() * kVelMax / 100;
+    vel *= (advanced_ctrl_widget_->ui_.checkBox_motor_speed_reverse->isChecked()) ? -1 : 1;
+    datc_interface_->motorVelCtrl(vel);
+}
+
+void MainWindow::datcMotorCurCtrl() {
+    int16_t cur = advanced_ctrl_widget_->ui_.doubleSpinBox_motor_current->value() * kCurMax / 100;
+    cur *= (advanced_ctrl_widget_->ui_.checkBox_motor_current_reverse->isChecked()) ? -1 : 1;
+    datc_interface_->motorCurCtrl(cur);
 }
 
 void MainWindow::datcInit() {
@@ -324,6 +373,15 @@ void MainWindow::on_pushButton_select_datc_ctrl_clicked() {
     ui_->pushButton_select_modbus   ->setStyleSheet(menu_btn_inactive_str_);
     ui_->pushButton_select_datc_ctrl->setStyleSheet(menu_btn_active_str_);
     ui_->pushButton_select_adv      ->setStyleSheet(menu_btn_inactive_str_);
+    ui_->pushButton_select_tcp      ->setStyleSheet(menu_btn_inactive_str_);
+}
+
+void MainWindow::on_pushButton_select_adv_clicked() {
+    ui_->stackedWidget->setCurrentIndex((int) WidgetSeq::ADVANCED_CTRL_WIDGET);
+
+    ui_->pushButton_select_modbus   ->setStyleSheet(menu_btn_inactive_str_);
+    ui_->pushButton_select_datc_ctrl->setStyleSheet(menu_btn_inactive_str_);
+    ui_->pushButton_select_adv      ->setStyleSheet(menu_btn_active_str_);
     ui_->pushButton_select_tcp      ->setStyleSheet(menu_btn_inactive_str_);
 }
 
