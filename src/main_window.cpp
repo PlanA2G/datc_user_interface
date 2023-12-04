@@ -73,6 +73,16 @@ MainWindow::MainWindow(int argc, char **argv, bool &success, QWidget *parent) : 
     modbus_widget_->ui_.comboBox_baudrate->setCurrentIndex(2);
     modbus_widget_->ui_.comboBox_baudrate->setDisabled(true);
 
+    // Check box setting
+    QString checkbox_qstr = "QCheckBox::indicator {width:25px; height: 25px;}";
+
+    tcp_widget_->ui_.checkBox_tcp_send_status->setStyleSheet(checkbox_qstr);
+
+    checkbox_qstr = "QCheckBox::indicator {width:20px; height: 20px;}";
+
+    advanced_ctrl_widget_->ui_.checkBox_motor_speed_reverse  ->setStyleSheet(checkbox_qstr);
+    advanced_ctrl_widget_->ui_.checkBox_motor_current_reverse->setStyleSheet(checkbox_qstr);
+
     // DATC control related btn
     QObject::connect(datc_ctrl_widget_->ui_.pushButton_cmd_enable  , SIGNAL(clicked()), this, SLOT(datcEnable()));
     QObject::connect(datc_ctrl_widget_->ui_.pushButton_cmd_disable , SIGNAL(clicked()), this, SLOT(datcDisable()));

@@ -74,17 +74,12 @@ QCheckBox::indicator{
 	border-bottom-right-radius:20px;
 }
 
-#pushButton_set_position{
+#pushButton_set_motor_speed{
 	background-color:#555555;
 	color:#FFFFFF;
 }
 
-#pushButton_set_torque{
-	background-color:#555555;
-	color:#FFFFFF;
-}
-
-#pushButton_set_speed{
+#pushButton_set_motor_current{
 	background-color:#555555;
 	color:#FFFFFF;
 }
