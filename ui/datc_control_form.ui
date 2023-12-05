@@ -341,7 +341,7 @@ QSlider::sub-page:horizontal {
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans KR Medium</family>
+           <family>Noto Sans KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -801,7 +801,7 @@ QSlider::sub-page:horizontal {
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans KR Medium</family>
+           <family>Noto Sans KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -1019,7 +1019,7 @@ Enable</string>
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans KR Medium</family>
+           <family>Noto Sans KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -1044,7 +1044,7 @@ Disable</string>
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans KR Medium</family>
+           <family>Noto Sans KR</family>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -1263,7 +1263,7 @@ Disable</string>
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans KR Medium</family>
+           <family>Noto Sans KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -1480,7 +1480,7 @@ Disable</string>
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans KR Medium</family>
+           <family>Noto Sans KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -1698,7 +1698,7 @@ Open</string>
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans KR Medium</family>
+           <family>Noto Sans KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -1723,7 +1723,7 @@ Close</string>
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans KR Medium</family>
+           <family>Noto Sans KR</family>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -1942,7 +1942,7 @@ Close</string>
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans KR Medium</family>
+           <family>Noto Sans KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -2160,7 +2160,7 @@ Gripper On</string>
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans KR Medium</family>
+           <family>Noto Sans KR</family>
            <pointsize>14</pointsize>
            <weight>75</weight>
            <bold>true</bold>
@@ -2187,7 +2187,7 @@ Gripper Off</string>
        </property>
        <property name="font">
         <font>
-         <family>Noto Sans KR Medium</family>
+         <family>Noto Sans KR</family>
          <weight>50</weight>
          <bold>false</bold>
         </font>
@@ -2211,7 +2211,7 @@ Gripper Off</string>
           <widget class="QLabel" name="label_50">
            <property name="font">
             <font>
-             <family>Noto Sans KR Medium</family>
+             <family>Noto Sans KR</family>
              <pointsize>16</pointsize>
              <weight>50</weight>
              <bold>false</bold>
@@ -2233,7 +2233,7 @@ Gripper Off</string>
               <spacer name="horizontalSpacer">
                <property name="font">
                 <font>
-                 <family>Noto Sans KR Medium</family>
+                 <family>Noto Sans KR</family>
                  <weight>50</weight>
                  <bold>false</bold>
                 </font>
@@ -2256,7 +2256,7 @@ Gripper Off</string>
               <widget class="QSlider" name="horizontalSlider_finger_pos">
                <property name="font">
                 <font>
-                 <family>Noto Sans KR Medium</family>
+                 <family>Noto Sans KR</family>
                  <weight>50</weight>
                  <bold>false</bold>
                 </font>
@@ -2305,7 +2305,7 @@ Gripper Off</string>
               <widget class="QLabel" name="label_70">
                <property name="font">
                 <font>
-                 <family>Noto Sans KR Medium</family>
+                 <family>Noto Sans KR</family>
                  <pointsize>12</pointsize>
                  <weight>50</weight>
                  <bold>false</bold>
@@ -2323,7 +2323,7 @@ Gripper Off</string>
               <widget class="QLabel" name="label_69">
                <property name="font">
                 <font>
-                 <family>Noto Sans KR Medium</family>
+                 <family>Noto Sans KR</family>
                  <pointsize>12</pointsize>
                  <weight>50</weight>
                  <bold>false</bold>
@@ -2341,7 +2341,7 @@ Gripper Off</string>
               <widget class="QLabel" name="label_68">
                <property name="font">
                 <font>
-                 <family>Noto Sans KR Medium</family>
+                 <family>Noto Sans KR</family>
                  <pointsize>12</pointsize>
                  <weight>50</weight>
                  <bold>false</bold>
@@ -2359,7 +2359,7 @@ Gripper Off</string>
               <widget class="QLabel" name="label_67">
                <property name="font">
                 <font>
-                 <family>Noto Sans KR Medium</family>
+                 <family>Noto Sans KR</family>
                  <pointsize>12</pointsize>
                  <weight>50</weight>
                  <bold>false</bold>
@@ -2377,7 +2377,7 @@ Gripper Off</string>
               <widget class="QLabel" name="label_66">
                <property name="font">
                 <font>
-                 <family>Noto Sans KR Medium</family>
+                 <family>Noto Sans KR</family>
                  <pointsize>12</pointsize>
                  <weight>50</weight>
                  <bold>false</bold>
@@ -2395,7 +2395,7 @@ Gripper Off</string>
               <widget class="QLabel" name="label_65">
                <property name="font">
                 <font>
-                 <family>Noto Sans KR Medium</family>
+                 <family>Noto Sans KR</family>
                  <pointsize>12</pointsize>
                  <weight>50</weight>
                  <bold>false</bold>
@@ -2636,7 +2636,7 @@ Gripper Off</string>
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans KR Medium</family>
+               <family>Noto Sans KR</family>
                <pointsize>14</pointsize>
                <weight>50</weight>
                <bold>false</bold>
@@ -2660,7 +2660,7 @@ Gripper Off</string>
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans KR Medium</family>
+               <family>Noto Sans KR</family>
                <pointsize>14</pointsize>
                <weight>50</weight>
                <bold>false</bold>
@@ -2684,7 +2684,7 @@ Gripper Off</string>
             <spacer name="horizontalSpacer_3">
              <property name="font">
               <font>
-               <family>Noto Sans KR Medium</family>
+               <family>Noto Sans KR</family>
                <weight>50</weight>
                <bold>false</bold>
               </font>
@@ -2714,7 +2714,7 @@ Gripper Off</string>
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans KR Medium</family>
+           <family>Noto Sans KR</family>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2738,7 +2738,7 @@ Gripper Off</string>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_torque">
              <property name="font">
               <font>
-               <family>Noto Sans KR Medium</family>
+               <family>Noto Sans KR</family>
                <pointsize>14</pointsize>
                <weight>50</weight>
                <bold>false</bold>
@@ -2768,7 +2768,7 @@ Gripper Off</string>
             <widget class="QLabel" name="label_51">
              <property name="font">
               <font>
-               <family>Noto Sans KR Medium</family>
+               <family>Noto Sans KR</family>
                <pointsize>16</pointsize>
                <weight>50</weight>
                <bold>false</bold>
@@ -2997,7 +2997,7 @@ Gripper Off</string>
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans KR Medium</family>
+               <family>Noto Sans KR</family>
                <pointsize>14</pointsize>
                <weight>50</weight>
                <bold>false</bold>
@@ -3015,7 +3015,7 @@ Gripper Off</string>
             <spacer name="verticalSpacer_5">
              <property name="font">
               <font>
-               <family>Noto Sans KR Medium</family>
+               <family>Noto Sans KR</family>
                <weight>50</weight>
                <bold>false</bold>
               </font>
@@ -3039,7 +3039,7 @@ Gripper Off</string>
                 <spacer name="verticalSpacer">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <weight>50</weight>
                    <bold>false</bold>
                   </font>
@@ -3062,7 +3062,7 @@ Gripper Off</string>
                 <widget class="QSlider" name="verticalSlider_torque">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <weight>50</weight>
                    <bold>false</bold>
                   </font>
@@ -3091,7 +3091,7 @@ Gripper Off</string>
                 <spacer name="verticalSpacer_2">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <weight>50</weight>
                    <bold>false</bold>
                   </font>
@@ -3118,7 +3118,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_58">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <pointsize>12</pointsize>
                    <weight>50</weight>
                    <bold>false</bold>
@@ -3136,7 +3136,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_57">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <pointsize>12</pointsize>
                    <weight>50</weight>
                    <bold>false</bold>
@@ -3154,7 +3154,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_56">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <pointsize>12</pointsize>
                    <weight>50</weight>
                    <bold>false</bold>
@@ -3172,7 +3172,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_55">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <pointsize>12</pointsize>
                    <weight>50</weight>
                    <bold>false</bold>
@@ -3190,7 +3190,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_54">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <pointsize>12</pointsize>
                    <weight>50</weight>
                    <bold>false</bold>
@@ -3208,7 +3208,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_53">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <pointsize>12</pointsize>
                    <weight>50</weight>
                    <bold>false</bold>
@@ -3238,7 +3238,7 @@ Gripper Off</string>
            </property>
            <property name="font">
             <font>
-             <family>Noto Sans KR Medium</family>
+             <family>Noto Sans KR</family>
              <weight>50</weight>
              <bold>false</bold>
             </font>
@@ -3260,7 +3260,7 @@ Gripper Off</string>
             <widget class="QLabel" name="label_52">
              <property name="font">
               <font>
-               <family>Noto Sans KR Medium</family>
+               <family>Noto Sans KR</family>
                <pointsize>16</pointsize>
                <weight>50</weight>
                <bold>false</bold>
@@ -3489,7 +3489,7 @@ Gripper Off</string>
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans KR Medium</family>
+               <family>Noto Sans KR</family>
                <pointsize>14</pointsize>
                <weight>50</weight>
                <bold>false</bold>
@@ -3511,7 +3511,7 @@ Gripper Off</string>
                 <spacer name="verticalSpacer_3">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <weight>50</weight>
                    <bold>false</bold>
                   </font>
@@ -3534,7 +3534,7 @@ Gripper Off</string>
                 <widget class="QSlider" name="verticalSlider_speed">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <weight>50</weight>
                    <bold>false</bold>
                   </font>
@@ -3563,7 +3563,7 @@ Gripper Off</string>
                 <spacer name="verticalSpacer_4">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <weight>50</weight>
                    <bold>false</bold>
                   </font>
@@ -3590,7 +3590,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_59">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <pointsize>12</pointsize>
                    <weight>50</weight>
                    <bold>false</bold>
@@ -3608,7 +3608,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_60">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <pointsize>12</pointsize>
                    <weight>50</weight>
                    <bold>false</bold>
@@ -3626,7 +3626,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_61">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <pointsize>12</pointsize>
                    <weight>50</weight>
                    <bold>false</bold>
@@ -3644,7 +3644,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_62">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <pointsize>12</pointsize>
                    <weight>50</weight>
                    <bold>false</bold>
@@ -3662,7 +3662,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_63">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <pointsize>12</pointsize>
                    <weight>50</weight>
                    <bold>false</bold>
@@ -3680,7 +3680,7 @@ Gripper Off</string>
                 <widget class="QLabel" name="label_64">
                  <property name="font">
                   <font>
-                   <family>Noto Sans KR Medium</family>
+                   <family>Noto Sans KR</family>
                    <pointsize>12</pointsize>
                    <weight>50</weight>
                    <bold>false</bold>
@@ -3702,7 +3702,7 @@ Gripper Off</string>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_speed">
              <property name="font">
               <font>
-               <family>Noto Sans KR Medium</family>
+               <family>Noto Sans KR</family>
                <pointsize>14</pointsize>
                <weight>50</weight>
                <bold>false</bold>
@@ -3732,7 +3732,7 @@ Gripper Off</string>
             <spacer name="verticalSpacer_6">
              <property name="font">
               <font>
-               <family>Noto Sans KR Medium</family>
+               <family>Noto Sans KR</family>
                <weight>50</weight>
                <bold>false</bold>
               </font>

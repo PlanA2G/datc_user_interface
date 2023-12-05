@@ -12,7 +12,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Noto Sans CJK HK</family>
+    <family>Noto Sans KR</family>
    </font>
   </property>
   <property name="windowTitle">
@@ -170,7 +170,7 @@ QLineEdit{
            </property>
            <property name="font">
             <font>
-             <family>Noto Sans KR Medium</family>
+             <family>Noto Sans KR</family>
              <pointsize>24</pointsize>
              <weight>75</weight>
              <bold>true</bold>
@@ -222,7 +222,7 @@ QLineEdit{
            </property>
            <property name="font">
             <font>
-             <family>Noto Sans KR Medium</family>
+             <family>Noto Sans KR</family>
              <pointsize>16</pointsize>
              <weight>75</weight>
              <bold>true</bold>
@@ -248,7 +248,7 @@ QLineEdit{
       </property>
       <property name="font">
        <font>
-        <family>Noto Sans KR Medium</family>
+        <family>Noto Sans KR</family>
        </font>
       </property>
       <layout class="QGridLayout" name="gridLayout">
@@ -301,7 +301,7 @@ QLineEdit{
            </property>
            <property name="font">
             <font>
-             <family>Noto Sans KR Medium</family>
+             <family>Noto Sans KR</family>
              <pointsize>16</pointsize>
              <weight>75</weight>
              <bold>true</bold>
@@ -316,7 +316,7 @@ QLineEdit{
           <widget class="QLineEdit" name="lineEdit_monitor_mode">
            <property name="font">
             <font>
-             <family>Noto Sans KR Medium</family>
+             <family>Noto Sans KR</family>
              <pointsize>13</pointsize>
              <weight>75</weight>
              <bold>true</bold>
@@ -380,7 +380,7 @@ QLineEdit{
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans KR Medium</family>
+               <family>Noto Sans KR</family>
                <pointsize>12</pointsize>
                <weight>75</weight>
                <bold>true</bold>
@@ -407,7 +407,7 @@ QLineEdit{
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans KR Medium</family>
+               <family>Noto Sans KR</family>
                <pointsize>12</pointsize>
                <weight>75</weight>
                <bold>true</bold>
@@ -468,7 +468,7 @@ QLineEdit{
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans KR Medium</family>
+               <family>Noto Sans KR</family>
                <pointsize>12</pointsize>
                <weight>75</weight>
                <bold>true</bold>
@@ -495,7 +495,7 @@ QLineEdit{
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans KR Medium</family>
+               <family>Noto Sans KR</family>
                <pointsize>12</pointsize>
                <weight>75</weight>
                <bold>true</bold>
@@ -515,7 +515,7 @@ QLineEdit{
           <widget class="Line" name="line_4">
            <property name="font">
             <font>
-             <family>Noto Sans KR Medium</family>
+             <family>Noto Sans KR</family>
             </font>
            </property>
            <property name="orientation">
@@ -572,7 +572,7 @@ QLineEdit{
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans KR Medium</family>
+               <family>Noto Sans KR</family>
                <pointsize>10</pointsize>
                <weight>75</weight>
                <bold>true</bold>
@@ -602,7 +602,7 @@ QLineEdit{
              </property>
              <property name="font">
               <font>
-               <family>Noto Sans KR Medium</family>
+               <family>Noto Sans KR</family>
                <pointsize>12</pointsize>
                <weight>75</weight>
                <bold>true</bold>
@@ -624,7 +624,7 @@ QLineEdit{
         <widget class="Line" name="line">
          <property name="font">
           <font>
-           <family>Noto Sans KR Medium</family>
+           <family>Noto Sans KR</family>
           </font>
          </property>
          <property name="orientation">
@@ -651,7 +651,7 @@ QLineEdit{
       </property>
       <property name="font">
        <font>
-        <family>Noto Sans KR Medium</family>
+        <family>Noto Sans KR</family>
        </font>
       </property>
       <property name="styleSheet">
@@ -686,7 +686,7 @@ QLineEdit{
          </property>
          <property name="font">
           <font>
-           <family>Noto Sans KR Medium</family>
+           <family>Noto Sans KR</family>
           </font>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -812,7 +812,7 @@ QLineEdit{
             </property>
             <property name="font">
              <font>
-              <family>Noto Sans KR Medium</family>
+              <family>Noto Sans KR</family>
               <pointsize>14</pointsize>
               <weight>75</weight>
               <bold>true</bold>
@@ -1053,7 +1053,7 @@ QLineEdit{
             </property>
             <property name="font">
              <font>
-              <family>Noto Sans KR Medium</family>
+              <family>Noto Sans KR</family>
               <pointsize>14</pointsize>
               <weight>75</weight>
               <bold>true</bold>
@@ -1292,7 +1292,7 @@ QLineEdit{
             </property>
             <property name="font">
              <font>
-              <family>Noto Sans KR Medium</family>
+              <family>Noto Sans KR</family>
               <pointsize>14</pointsize>
               <weight>75</weight>
               <bold>true</bold>
@@ -1531,7 +1531,7 @@ QLineEdit{
             </property>
             <property name="font">
              <font>
-              <family>Noto Sans KR Medium</family>
+              <family>Noto Sans KR</family>
               <pointsize>14</pointsize>
               <weight>75</weight>
               <bold>true</bold>
@@ -1559,7 +1559,7 @@ QLineEdit{
            <spacer name="verticalSpacer">
             <property name="font">
              <font>
-              <family>Noto Sans KR Medium</family>
+              <family>Noto Sans KR</family>
              </font>
             </property>
             <property name="orientation">
@@ -1577,7 +1577,7 @@ QLineEdit{
            <widget class="QPushButton" name="pushButton">
             <property name="font">
              <font>
-              <family>Noto Sans KR Medium</family>
+              <family>Noto Sans KR</family>
              </font>
             </property>
             <property name="text">
@@ -1605,7 +1605,7 @@ QLineEdit{
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="font">
        <font>
-        <family>Noto Sans KR Medium</family>
+        <family>Noto Sans KR</family>
        </font>
       </property>
      </widget>
