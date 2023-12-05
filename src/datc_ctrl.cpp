@@ -167,9 +167,9 @@ bool DatcCtrl::readDatcData() {
     if (mbc_.recvData(reg_addr, reg_num, reg)) {
         uint16_t status    = reg[0];
         status_.states     = status;
-        status_.motor_pos  = reg[1];
-        status_.motor_cur  = reg[2];
-        status_.motor_vel  = reg[3];
+        status_.motor_pos  = (int16_t) reg[1];
+        status_.motor_cur  = (int16_t) reg[2];
+        status_.motor_vel  = (int16_t) reg[3];
         status_.finger_pos = reg[4];
         status_.voltage    = reg[7];
 

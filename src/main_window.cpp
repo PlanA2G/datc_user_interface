@@ -153,8 +153,8 @@ void MainWindow::timerCallback() {
     DatcStatus datc_status = datc_interface_->getDatcStatus();
 
     // Display
-    ui_->lineEdit_monitor_finger_position-> setText(QString::number((double) datc_status.finger_pos / 10 , 'f', 1) + " %");
-    ui_->lineEdit_monitor_current        -> setText(QString::number(datc_status.motor_cur, 'd', 0) + " mA");
+    ui_->lineEdit_monitor_finger_position->setText(QString::number((double) datc_status.finger_pos / 10 , 'f', 1) + " %");
+    ui_->lineEdit_monitor_current        ->setText(QString::number(datc_status.motor_cur) + " mA");
 
     // Comm. status check
     const bool is_modbus_connected = datc_interface_->getConnectionState();
