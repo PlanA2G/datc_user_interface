@@ -81,21 +81,20 @@ $ sudo apt install pyqt5-dev*
 }
 ```
 
-- The states of DATC is as follows.
-
-Bit | Status | Value
----- | ---- | ----
-0 | Motor Enable | 0: False, 1: True
-1 | Gripper Initialize | 0: False, 1: True
-2 | Motor Position Control | 0: False, 1: True
-3 | Motor Velocity Control | 0: False, 1: True
-4 | Motor Current Control | 0: False, 1: True
-5 | Gripper Open | 0: False, 1: True
-6 | Gripper Close | 0: False, 1: True
-7 | - | -
-8 | - | -
-9 | Motor Fault | 0: False, 1: True
-10-15 | - | -
+**States of DATC**
+| Bit   | Status                 | Value
+| ----  | ----                   | ----
+| 0     | Motor Enable           | 0: False, 1: True
+| 1     | Gripper Initialize     | 0: False, 1: True
+| 2     | Motor Position Control | 0: False, 1: True
+| 3     | Motor Velocity Control | 0: False, 1: True
+| 4     | Motor Current Control  | 0: False, 1: True
+| 5     | Gripper Open           | 0: False, 1: True
+| 6     | Gripper Close          | 0: False, 1: True
+| 7     | -                      | -
+| 8     | -                      | -
+| 9     | Motor Fault            | 0: False, 1: True
+| 10-15 | -                      | -
 
 #### Command to server
 - If you want to change modbus address connected to datc_user_interface, send a Json message as below.
@@ -116,25 +115,25 @@ Bit | Status | Value
 }
 ```
 
-#### List of "command"
-Function | Command | Value 1 (Dec) | Value 2 (Dec)
----- | ---- | ---- | ----
-Motor Enable | 1 | - | -
-Motor Stop | 2 | - | -
-Motor Disable | 4 | - | -
-Motor Velocity Control | 6 | Target velocity (rpm) | Target duration (ms)
-Motor Current Control | 7 | Target Current (mA) | Target duration (ms)
-Change Modbus Address | 50 | Desired address | -
-Gripper Initialize | 101 | - | -
-Gripper Open | 102 | - | -
-Gripper Close | 103 | - | -
-Set Finger Position | 104 | 0 ~ 1000 (0: closed & 1000: open)
-Vacuum Gripper On | 106 | - | -
-Vacuum Gripper Off | 107 | - | -
-Set Motor Torque | 212 | Ratio of target motor torque to default torque (%) | -
-Set Motor Speed | 213 | Ratio of target motor speed to default speed (%) | -
+**List of "command"**
+- Please refer to the DATC manual for a detailed description of each function.
 
-
+| Function               | Command | Value 1 (Dec) | Value 2 (Dec)
+| ----                   | ----    | ---- | ----
+| Motor Enable           | 1       | - | -
+| Motor Stop             | 2       | - | -
+| Motor Disable          | 4       | - | -
+| Motor Velocity Control | 6       | Target velocity (rpm) | Target duration (ms)
+| Motor Current Control  | 7       | Target Current (mA) | -
+| Change Modbus Address  | 50      | Desired address | -
+| Gripper Initialize     | 101     | - | -
+| Gripper Open           | 102     | - | -
+| Gripper Close          | 103     | - | -
+| Set Finger Position    | 104     | 0 ~ 1000 (0: closed & 1000: open)
+| Vacuum Gripper On      | 106     | - | -
+| Vacuum Gripper Off     | 107     | - | -
+| Set Motor Torque       | 212     | Ratio of target motor torque to default torque (%) | -
+| Set Motor Speed        | 213     | Ratio of target motor speed to default speed (%) | -
 
 #### Communication test using 'telnet'
 - Activate TCP socket server using datc_user_interface
