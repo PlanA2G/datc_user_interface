@@ -8,7 +8,7 @@
 - Windows 10
     - Qt 6.6.0
     - MinGW 11.2.0 64-bit
-- Ubuntu 22.04
+- Ubuntu 22.04 (Jammy Jellyfish)
     - Qt 6.6.0
     - GCC 64-bit
 
@@ -52,7 +52,7 @@ Download and run compatible files on Windows and Ubuntu respectively from the Gi
 ## Troubleshooting
 - This section lists solutions to a set of possible errors which can happen when using the datc_user_interface.
 #### qt.qpa.plugin error
-- If you have seen an error such as "qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "~/platforms:" even though it was found." when you run the released datc_user_interface on Ubuntu 22.04, you can resolve it in the following way.
+- If you have seen an error such as **"qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "~/platforms:" even though it was found."** when you run the released datc_user_interface on Ubuntu 22.04, you can resolve it in the following way.
 ```shell
 $ sudo apt update
 $ sudo apt install pyqt5-dev*
