@@ -2213,7 +2213,7 @@ Gripper Off</string>
               </font>
              </property>
              <property name="text">
-              <string>Motor Speed  </string>
+              <string>Motor Velocity Control </string>
              </property>
              <property name="alignment">
               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2793,7 +2793,7 @@ Gripper Off</string>
               </font>
              </property>
              <property name="text">
-              <string>Motor Current  </string>
+              <string>Motor Current Control </string>
              </property>
              <property name="alignment">
               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

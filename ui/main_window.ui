@@ -16,7 +16,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>DATC User Interface</string>
+   <string>KR-GCS User Interface</string>
   </property>
   <property name="styleSheet">
    <string notr="true">#centralwidget{
@@ -176,7 +176,7 @@ QLineEdit{
             </font>
            </property>
            <property name="text">
-            <string>DATC</string>
+            <string>KR-GCS</string>
            </property>
           </widget>
          </item>
@@ -803,7 +803,7 @@ QLineEdit{
             <property name="font">
              <font>
               <family>Noto Sans KR</family>
-              <pointsize>14</pointsize>
+              <pointsize>12</pointsize>
               <bold>true</bold>
               <strikeout>false</strikeout>
               <kerning>true</kerning>
@@ -1043,12 +1043,12 @@ QLineEdit{
             <property name="font">
              <font>
               <family>Noto Sans KR</family>
-              <pointsize>14</pointsize>
+              <pointsize>12</pointsize>
               <bold>true</bold>
              </font>
             </property>
             <property name="text">
-             <string>  DATC Control</string>
+             <string>  Gripper Control</string>
             </property>
             <property name="icon">
              <iconset resource="../asset/feather_icon/resource.qrc">
@@ -1281,12 +1281,12 @@ QLineEdit{
             <property name="font">
              <font>
               <family>Noto Sans KR</family>
-              <pointsize>14</pointsize>
+              <pointsize>12</pointsize>
               <bold>true</bold>
              </font>
             </property>
             <property name="text">
-             <string>  Advanced</string>
+             <string>  Motor Control</string>
             </property>
             <property name="icon">
              <iconset resource="../asset/feather_icon/resource.qrc">
@@ -1519,7 +1519,7 @@ QLineEdit{
             <property name="font">
              <font>
               <family>Noto Sans KR</family>
-              <pointsize>14</pointsize>
+              <pointsize>12</pointsize>
               <bold>true</bold>
              </font>
             </property>
